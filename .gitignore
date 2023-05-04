@@ -2,8 +2,9 @@
 __pycache__/
 *.py[cod]
 *$py.class
-*.pyc
-
+change_config.cython-38.pyc
+change_config.cython-39.pyc
+change_config.cython-311.pyc
 # C extensions
 *.so
 
