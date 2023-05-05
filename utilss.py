@@ -480,7 +480,7 @@ from spacy.matcher import Matcher
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import wordnet
 from neo4j_conn import Neo4jConn
-from transformers import pipeline
+# from transformers import pipeline
 from itertools import islice
 import time
 from config import Config
@@ -496,9 +496,9 @@ NODENORM_URL = 'https://nodenormalization-sri.renci.org/get_normalized_nodes'
 NAME_RESOLUTION_URL = 'https://name-resolution-sri.renci.org/lookup'
 PLAIN_URL = 'http://bern2.korea.ac.kr/plain'
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-# Load the zero-shot classification pipeline
-zero_shot_classifier = pipeline("zero-shot-classification", device=device)
+# device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+# # Load the zero-shot classification pipeline
+# zero_shot_classifier = pipeline("zero-shot-classification", device=device)
 
 
 def normalize(il):

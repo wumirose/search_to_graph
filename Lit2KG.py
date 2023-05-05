@@ -1,7 +1,6 @@
 from utilss import *
 from conf.change_config import change_config
 import streamlit as st
-import extra_streamlit_components as stx
 # from KnowledgeGraph import parse_post_request
 
 DB = 'PubMed Central'

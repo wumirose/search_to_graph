@@ -3,41 +3,15 @@
         "annotations": [
             {
                 "id": [
-                    "mesh:D000079263"
-                ],
-                "is_neural_normalized": true,
-                "mention": "preventable disease",
-                "obj": "disease",
-                "prob": 0.7874486446380615,
-                "span": {
-                    "begin": 34,
-                    "end": 53
-                }
-            },
-            {
-                "id": [
-                    "NCBITaxon:4097"
+                    "NCBITaxon:9606"
                 ],
                 "is_neural_normalized": false,
-                "mention": "tobacco",
+                "mention": "persons",
                 "obj": "species",
-                "prob": 0.7503036856651306,
+                "prob": 0.7817741632461548,
                 "span": {
-                    "begin": 126,
-                    "end": 133
-                }
-            },
-            {
-                "id": [
-                    "mesh:D009538"
-                ],
-                "is_neural_normalized": false,
-                "mention": "nicotine",
-                "obj": "drug",
-                "prob": 0.9975650310516357,
-                "span": {
-                    "begin": 275,
-                    "end": 283
+                    "begin": 94,
+                    "end": 101
                 }
             },
             {
@@ -47,10 +21,10 @@
                 "is_neural_normalized": false,
                 "mention": "youths",
                 "obj": "species",
-                "prob": 0.5303096175193787,
+                "prob": 0.5091097354888916,
                 "span": {
-                    "begin": 430,
-                    "end": 436
+                    "begin": 652,
+                    "end": 658
                 }
             },
             {
@@ -60,193 +34,36 @@
                 "is_neural_normalized": false,
                 "mention": "youths",
                 "obj": "species",
-                "prob": 0.663000226020813,
+                "prob": 0.5854071974754333,
                 "span": {
-                    "begin": 789,
-                    "end": 795
+                    "begin": 788,
+                    "end": 794
                 }
             },
             {
                 "id": [
-                    "CUI-less"
+                    "NCBITaxon:9606"
                 ],
                 "is_neural_normalized": false,
-                "mention": "heating element",
-                "obj": "DNA",
-                "prob": 0.5096272230148315,
-                "span": {
-                    "begin": 816,
-                    "end": 831
-                }
-            },
-            {
-                "id": [
-                    "mesh:D009538"
-                ],
-                "is_neural_normalized": false,
-                "mention": "nicotine",
-                "obj": "drug",
-                "prob": 0.9986605644226074,
-                "span": {
-                    "begin": 927,
-                    "end": 935
-                }
-            },
-            {
-                "id": [
-                    "mesh:D009538"
-                ],
-                "is_neural_normalized": false,
-                "mention": "Nicotine",
-                "obj": "drug",
-                "prob": 0.9989069700241089,
-                "span": {
-                    "begin": 993,
-                    "end": 1001
-                }
-            },
-            {
-                "id": [
-                    "mesh:D013759"
-                ],
-                "is_neural_normalized": false,
-                "mention": "tetrahydrocannabinol",
-                "obj": "drug",
-                "prob": 0.9996192455291748,
-                "span": {
-                    "begin": 1156,
-                    "end": 1176
-                }
-            },
-            {
-                "id": [
-                    "mesh:D013759"
-                ],
-                "is_neural_normalized": false,
-                "mention": "THC",
-                "obj": "drug",
-                "prob": 0.9990698099136353,
-                "span": {
-                    "begin": 1178,
-                    "end": 1181
-                }
-            },
-            {
-                "id": [
-                    "mesh:D004837"
-                ],
-                "is_neural_normalized": true,
-                "mention": "vitamin E acetate",
-                "obj": "drug",
-                "prob": 0.9992506504058838,
-                "span": {
-                    "begin": 1194,
-                    "end": 1211
-                }
-            },
-            {
-                "id": [
-                    "mesh:D013759"
-                ],
-                "is_neural_normalized": false,
-                "mention": "THC",
-                "obj": "drug",
-                "prob": 0.9987717270851135,
-                "span": {
-                    "begin": 1228,
-                    "end": 1231
-                }
-            },
-            {
-                "id": [
-                    "mesh:D055370"
-                ],
-                "is_neural_normalized": false,
-                "mention": "lung injuries",
-                "obj": "disease",
-                "prob": 0.997667670249939,
-                "span": {
-                    "begin": 1299,
-                    "end": 1312
-                }
-            },
-            {
-                "id": [
-                    "CUI-less"
-                ],
-                "is_neural_normalized": false,
-                "mention": "youths",
+                "mention": "People",
                 "obj": "species",
-                "prob": 0.8063649535179138,
+                "prob": 0.9807164072990417,
                 "span": {
-                    "begin": 1367,
-                    "end": 1373
+                    "begin": 871,
+                    "end": 877
                 }
             },
             {
                 "id": [
-                    "mesh:D014947"
+                    "mesh:D001523"
                 ],
                 "is_neural_normalized": false,
-                "mention": "trauma",
+                "mention": "Mental Disorders",
                 "obj": "disease",
-                "prob": 0.5279297232627869,
+                "prob": 0.9999676942825317,
                 "span": {
-                    "begin": 1641,
-                    "end": 1647
-                }
-            },
-            {
-                "id": [
-                    "mesh:D000086382"
-                ],
-                "is_neural_normalized": false,
-                "mention": "COVID-19",
-                "obj": "disease",
-                "prob": 0.980663537979126,
-                "span": {
-                    "begin": 1684,
-                    "end": 1692
-                }
-            },
-            {
-                "id": [
-                    "mesh:D001008",
-                    "mim:607834"
-                ],
-                "is_neural_normalized": false,
-                "mention": "anxiety",
-                "obj": "disease",
-                "prob": 0.5680779218673706,
-                "span": {
-                    "begin": 1818,
-                    "end": 1825
-                }
-            },
-            {
-                "id": [
-                    "mesh:D009497"
-                ],
-                "is_neural_normalized": false,
-                "mention": "depression",
-                "obj": "disease",
-                "prob": 0.8171555399894714,
-                "span": {
-                    "begin": 1835,
-                    "end": 1845
-                }
-            },
-            {
-                "id": [
-                    "mesh:D009538"
-                ],
-                "is_neural_normalized": false,
-                "mention": "nicotine",
-                "obj": "drug",
-                "prob": 0.9899481534957886,
-                "span": {
-                    "begin": 1867,
-                    "end": 1875
+                    "begin": 897,
+                    "end": 913
                 }
             },
             {
@@ -254,25 +71,12 @@
                     "CUI-less"
                 ],
                 "is_neural_normalized": false,
-                "mention": "youths",
-                "obj": "species",
-                "prob": 0.898311972618103,
-                "span": {
-                    "begin": 1924,
-                    "end": 1930
-                }
-            },
-            {
-                "id": [
-                    "CUI-less"
-                ],
-                "is_neural_normalized": false,
-                "mention": "EVPs",
+                "mention": "high",
                 "obj": "cell_type",
-                "prob": 0.5066762566566467,
+                "prob": 0.5503188967704773,
                 "span": {
-                    "begin": 2202,
-                    "end": 2206
+                    "begin": 1158,
+                    "end": 1162
                 }
             },
             {
@@ -284,21 +88,34 @@
                 "obj": "DNA",
                 "prob": 0.6731387972831726,
                 "span": {
-                    "begin": 3137,
-                    "end": 3141
+                    "begin": 2090,
+                    "end": 2094
                 }
             },
             {
                 "id": [
-                    "NCBITaxon:9606"
+                    "CUI-less"
                 ],
                 "is_neural_normalized": false,
-                "mention": "persons",
+                "mention": "student",
                 "obj": "species",
-                "prob": 0.6833289861679077,
+                "prob": 0.8294610977172852,
                 "span": {
-                    "begin": 3746,
-                    "end": 3753
+                    "begin": 2592,
+                    "end": 2599
+                }
+            },
+            {
+                "id": [
+                    "CUI-less"
+                ],
+                "is_neural_normalized": false,
+                "mention": "student",
+                "obj": "species",
+                "prob": 0.602739155292511,
+                "span": {
+                    "begin": 2635,
+                    "end": 2642
                 }
             },
             {
@@ -308,69 +125,10 @@
                 "is_neural_normalized": false,
                 "mention": "Persons",
                 "obj": "species",
-                "prob": 0.8538793325424194,
+                "prob": 0.8686637878417969,
                 "span": {
-                    "begin": 3785,
-                    "end": 3792
-                }
-            }
-        ],
-        "text": "Tobacco product use leading cause preventable disease death United States . The term tobacco product report refers commercial tobacco products sacred traditional use tobacco certain American Indian communities. Initiation tobacco product use adolescence associated increased nicotine dependence sustained tobacco product use adulthood . Comprehensive tobacco control interventions substantial gains decreasing tobacco product use youths . Among U.S. high school students, current use cigarettes declined 36.4% 1997 6.0% 2019 . Although cigarette use youths declined, youths engaged use tobacco products cigars, hookah, smokeless tobacco, electronic vapor products (EVPs).EVPs known names including e-cigarettes, vapes, hookah pens, mods . In 2018, Surgeon General declared e-cigarette use youths epidemic . EVPs use heating element aerosolize liquid solution users inhale. Vaping liquids come variety flavors typically contain nicotine, highly addictive chemical affect brain development (,). Nicotine increase likelihood youths combustible tobacco products increase risk addiction substances (,). Moreover, EVPs deliver additional psychoactive substances tetrahydrocannabinol (THC) . In 2019, vitamin E acetate, additive found THC-containing EVPs, linked e-cigarette- vaping product use-associated lung injuries .Multiple factors influence use EVPs tobacco products youths, targeted marketing youths tobacco industry, appealing flavors EVPs, misperceptions vaping relieves stress, peer family influences, low perceptions harm (,). Other risk factors prime youths experimentation tobacco products substances include social isolation, grief, trauma, stress; risk factors commonly seen COVID-19 pandemic . The 2021 National Youth Tobacco Survey found that, youths currently use e-cigarettes, common reasons use feelings anxiety, stress, depression high buzz associated nicotine use .Continued surveillance tobacco product use youths crucial guiding evaluating tobacco prevention control strategies local, state, tribal, national levels. This report presents latest data 2021 national Youth Risk Behavior Survey (YRBS) assess ever, current, daily use EVPs U.S. high school students usual source obtaining EVPs. This report presents data previous YRBSs (2015, 2017, 2019) examine trends EVP use time. These finding inform youth-focused tobacco prevention control strategies local, state, tribal, national levels.This report includes data 2015 (N = 15,624), 2017 (N = 14,765), 2019 (N = 13,677), 2021 (N = 17,232) YRBSs, cross-sectional, school-based survey conducted biennially 1991. Each survey year, CDC collects data nationally representative sample public private school students grades 912 50 U.S. states District Columbia. Additional information YRBS sampling, data collection, response rates, processing available overview report supplement . The prevalence estimates tobacco product use questions entire study sample stratified sex, race ethnicity, grade, sexual orientation available https://nccd.cdc.gov/youthonline/App/Default.aspx. The YRBS questionnaire, data sets, documentation available https://www.cdc.gov/healthyyouth/data/yrbs/index.h This activity reviewed CDC conducted consistent applicable federal law CDC policy.Student demographic characteristics analyzed included sex (female male), sexual identity (heterosexual, gay lesbian, bisexual, questioning), race ethnicity. For sexual identity, questioning category included students selected, I describe sexual identity way I sure sexual identity (questioning). Students classified seven racial ethnic categories, including American Indian Alaska Native (AI/AN), Asian, Black African American (Black), Native Hawaiian Pacific Islander (NH/OPI), White, Hispanic Latino (Hispanic), persons multiple races (multiracial). (Persons Hispanic origin race categorized Hispanic; racial groups non-Hispanic.)On basis questions asked survey, electronic vapor products report refer products JUUL, SMOK, Suorin, Vuse, blu include e-cigarettes, vapes, vape pens, e-cigars, e-hookahs, hookah pens, mods. This study included questions EVP use, including use EVPs, current EVP use (1 day 30 days survey), daily use EVPs (during 30 days survey), usual source EVPs (among youths currently use EVPs) .TABLE 1* The introduction electronic vapor products section YRBS questionnaire stated: The 3 questions ask electronic vapor products, JUUL, SMOK, Suorin, Vuse, blu. Electronic vapor products include e-cigarettes, vapes, vape pens, e-cigars, e-hookahs, hookah pens, mods.Analyses completed SUDAAN (version 11.0.3; RTI International) account complex survey design weighting. Prevalence estimates 95% CIs questions assessing ever, current, daily EVP use calculated overall sex, racial ethnic, sexual identity group. Statistically significant pairwise differences demographic characteristics determined t-tests Taylor series linearization. In addition, prevalence behavior reported 2021 compared prevalence 2019 t-tests Taylor series linearization. Diffe",
-        "timestamp": "Thu May 04 19:48:43 +0000 2023"
-    },
-    {
-        "annotations": [
-            {
-                "id": [
-                    "mim:226400",
-                    "mesh:D004819"
-                ],
-                "is_neural_normalized": true,
-                "mention": "EVP",
-                "obj": "disease",
-                "prob": 0.8522839546203613,
-                "span": {
-                    "begin": 731,
-                    "end": 734
-                }
-            },
-            {
-                "id": [
-                    "CUI-less"
-                ],
-                "is_neural_normalized": false,
-                "mention": "White",
-                "obj": "cell_line",
-                "prob": 0.48686522245407104,
-                "span": {
-                    "begin": 2342,
-                    "end": 2347
-                }
-            },
-            {
-                "id": [
-                    "CUI-less"
-                ],
-                "is_neural_normalized": false,
-                "mention": "bisexual students",
-                "obj": "cell_type",
-                "prob": 0.5036478042602539,
-                "span": {
-                    "begin": 2451,
-                    "end": 2468
-                }
-            },
-            {
-                "id": [
-                    "NCBITaxon:9606"
-                ],
-                "is_neural_normalized": false,
-                "mention": "Persons",
-                "obj": "species",
-                "prob": 0.8784756660461426,
-                "span": {
-                    "begin": 2764,
-                    "end": 2771
+                    "begin": 3389,
+                    "end": 3396
                 }
             },
             {
@@ -382,22 +140,53 @@
                 "obj": "disease",
                 "prob": NaN,
                 "span": {
-                    "begin": 3343,
-                    "end": 3345
+                    "begin": 4550,
+                    "end": 4552
+                }
+            }
+        ],
+        "text": "Suicide presents major challenge public health United States globally . In 2021, total 48,183 persons (all ages) died suicide; suicide 11th leading cause death overall United States, accounting approximately 1.4% deaths . Although suicide suicidal behaviors public health concern life span, youths aged 1418 years present unique prevention challenges. Among high school-age youths aged 1418 years, 1,952 suicides occurred 2021, making suicide leading cause death age group (2021 rate = 9.0 100,000 population). Suicide accounted approximately fifth deaths (18.6%) age group . Deaths portion burden suicidal behavior; suicide attempts suicidal thoughts youths exceed deaths group. In 2020, according data nationally representative sample emergency departments (EDs), approximately 105,000 youths aged 1418 years visited EDs self-harm injuries .One main objectives Healthy People 2030 Mental Health Mental Disorders reduce suicide attempts youths . The Youth Risk Behavior Survey (YRBS) monitors categories priority health behaviors experiences high school students questions related suicide . This report summarizes 2021 YRBS data suicidal thoughts behaviors high school students compares results 2019; report updates previous analysis YRBS examining 20092019 data . The findings report indicate need comprehensive public health approach youth suicide prevention attention disproportionately affected populations.This report includes data 2019 (N = 13,677) 2021 (N = 17,232) YRBS, cross-sectional, school-based survey conducted biennially 1991. Each survey year, CDC collects data nationally representative sample public private school students grades 912 50 U.S. states District Columbia. Additional information YRBS sampling, data collection, response rates, processing available overview report supplement . The prevalence estimates suicidal thoughts behaviors overall study population sex, race ethnicity, grade, sexual identity available https://nccd.cdc.gov/youthonline/App/Default.aspx. The YRBS questionnaire, data sets, documentation available https://www.cdc.gov/healthyyouth/data/yrbs/index.h This activity reviewed CDC conducted consistent applicable federal law CDC policy.Four questions suicidal thoughts behavior focus report. The asked, During past 12 months, seriously consider attempting suicide?; second, During past 12 months, plan attempt suicide?; third, During past 12 months, times actually attempt suicide?; fourth, If attempted suicide past 12 months, attempt result injury, poisoning, overdose treated doctor nurse? All questions response options yes question times student attempted suicide, recoded reflect student attempted suicide: yes (1 time, 2 3 times, 4 5 times, 6 times) versus (0 times). The question needing medical treatment suicide attempt additional response option I attempt suicide past 12 months, recoded no.Demographic variables included sex, measured female male grade, measured 9, 10, 11, 12. Race ethnicity coded composite questions. First, students asked, Are Hispanic Latino? This question measured yes versus no; regardless students responded race question, answered yes coded Hispanic Latino (Hispanic). Second, students asked, What race? Check apply coded American Indian Alaska Native (AI/AN), Asian, Black African American (Black), Hispanic, Native Hawaiian Pacific Islander (NH/OPI), White. Students selected race coded multiracial. (Persons Hispanic origin race categorized Hispanic; racial groups non-Hispanic.) Sexual orientation measured sexual identity sex sexual contacts. Sexual identity, measured heterosexual; lesbian, gay, bisexual, questioning, (LGBQ+), new response options 2021 comparable sexual identity measure 2019. Sex sexual contacts (During life, sexual contact?) measured as: I sexual contact, females, males, females males. Responses compared students sex create following categories: sexual contact, opposite sex (e.g., female students sexual contact males), sex only, sexes (e.g., female students reported contact females females males).Prevalence estimates 95% CIs calculated suicidal measures, stratified sex (historically, female youths likely suicidal thoughts attempts, male youths likely die suicide) , years 2019 2021. Sex-stratified prevalence estimates stratified race ethnicity, grade, sexual identity, sex sexual contacts. Using unadjusted logistic regression models statement generate predicted marginal proportions, prevalence difference (PD) prevalence ratios (PRs) calculated detect difference prevalence suicidal behavior 2019 compared 2021 stratum (e.g., AI/AN female students). Using 2021 data only, PR calculated detect difference prevalence suicidal behavior subgroups demographic characteristic compared referent group. A p value <0.05 95% CI cross null value 1.0 determined statistical significance. The absolute value prevalence difference presented. Prevalence estimates denominator <30 considered statistically unreliable suppressed . All analyses conducted SUDAAN (version 11.0.3; RTI Internat",
+        "timestamp": "Thu May 04 22:33:02 +0000 2023"
+    },
+    {
+        "annotations": [
+            {
+                "id": [
+                    "NCBITaxon:9606"
+                ],
+                "is_neural_normalized": false,
+                "mention": "Persons",
+                "obj": "species",
+                "prob": 0.8320801258087158,
+                "span": {
+                    "begin": 1286,
+                    "end": 1293
                 }
             },
             {
                 "id": [
-                    "mim:606788",
-                    "mesh:D000856"
+                    "NCBIGene:6906"
                 ],
-                "is_neural_normalized": false,
-                "mention": "AN",
-                "obj": "disease",
-                "prob": 0.905531644821167,
+                "is_neural_normalized": true,
+                "mention": "LGBQ",
+                "obj": "gene",
+                "prob": 0.6209622621536255,
                 "span": {
-                    "begin": 3346,
-                    "end": 3348
+                    "begin": 1807,
+                    "end": 1811
+                }
+            },
+            {
+                "id": [
+                    "NCBIGene:6906"
+                ],
+                "is_neural_normalized": true,
+                "mention": "LGBQ",
+                "obj": "gene",
+                "prob": 0.8787376284599304,
+                "span": {
+                    "begin": 2134,
+                    "end": 2138
                 }
             },
             {
@@ -407,69 +196,29 @@
                 "is_neural_normalized": false,
                 "mention": "Persons",
                 "obj": "species",
-                "prob": 0.8942169547080994,
+                "prob": 0.8430042266845703,
                 "span": {
-                    "begin": 4056,
-                    "end": 4063
-                }
-            },
-            {
-                "id": [
-                    "mim:226400",
-                    "mesh:D004819"
-                ],
-                "is_neural_normalized": true,
-                "mention": "EVP",
-                "obj": "disease",
-                "prob": 0.9579720497131348,
-                "span": {
-                    "begin": 4296,
-                    "end": 4299
+                    "begin": 3520,
+                    "end": 3527
                 }
             }
         ],
-        "text": "rences prevalence estimates considered statistically significant t-test p value <0.05. Only statistically significant findings described.To identify temporal trends EVP use, logistic regression analyses model linear time effects controlling sex, grade (9, 10, 11, 12), race ethnicity . EVP use introduced YRBS questionnaire 2015; therefore, trends 20152021 examined use EVPs, current use EVPs, daily use EVPs sex race ethnicity. Students presented response options question asking sexual identity 2021, precludes ability examine trends EVP use sexual identity groups. Additional information methods conduct YRBS trend analyses provided overview report supplement .Overall, 36.2% high school students EVPs 2021 . The prevalence use EVP varied sex, race ethnicity, sexual identity. For example, prevalence EVP use higher female students (40.9%) male students (32.1%); higher Hispanic (40.4%), multiracial (36.8%), White (36.7%), NH/OPI (36.1%), Black (33.6%), AI/AN students (33.5%) Asian students (19.5%); higher bisexual students (48.9%) heterosexual (34.7%), gay lesbian (34.4%), questioning students (33.5%).TABLE 2*Refer  variable definitions. On basis t-test analysis Taylor series linearization, p<0.05. Responses female students significantly different male students. Responses Asian students significantly different American Indian Alaska Native (AI/AN), Black, Hispanic, Native Hawaiian Pacific Islander (NH/OPI), White, multiracial students. Responses Black students significantly different Hispanic students. Responses Bisexual students significantly different heterosexual, gay lesbian, questioning students. On basis t-test analysis Taylor series linearization, p<0.05. Responses female students significantly different male students. Responses Asian students significantly different AI/AN, Black, Hispanic, NH/OPI, White, Multiracial students. Responses Black students significantly different AI/AN, Hispanic, NH/OPI, White students. Responses bisexual students significantly different heterosexual, gay lesbian, questioning students. On basis t-test analysis Taylor series linearization, p<0.05. Responses Asian students significantly different Black, Hispanic, NH/OPI, White, multiracial students. Responses Black students significantly different White multiracial students. Responses Hispanic students significantly different White multiracial students. Responses White students significantly different multiracial students. Responses bisexual students significantly different heterosexual questioning students.** N=17,232 respondents. Because state local questionnaires differ jurisdiction, students schools asked national YRBS questions. Therefore, total number (N) students answering question varied. Percentages category calculated known data. Persons Hispanic Latino (Hispanic) origin race categorized Hispanic; racial groups non-Hispanic. Includes students responded, I describe sexual identity way I sure sexual identity (questioning).During 20152021, linear decrease occurred use EVP (from 44.9% 36.2%), overall male (from 46.1% 32.1%), AI/AN (from 61.3% 33.5%), Black (from 42.4% 33.6%), Hispanic (from 51.9% 40.4%), NH/OPI (from 61.4% 36.1%), multiracial students (from 48.1% 36.8%) . In addition, 2019 2021, decreases observed use EVP, overall (from 50.1% 36.2%), female (from 50.7% 40.9%), male (from 49.6% 32.1%), AI/AN (from 57.9% 33.5%), Black (from 40.0% 33.6%), Hispanic (from 49.5% 40.4%), NH/OPI (from 58.7% 36.1%), White (from 54.7% 36.7%), multiracial students (from 55.3% 36.8%).TABLE 3*Refer  variable definitions. 2015: N = 15,624 respondents; 2017: N = 14,765 respondents; 2019: N = 13,677 respondents; 2021: N = 17,232 respondents. Because state local questionnaires differ jurisdiction, students schools asked national YRBS questions. Therefore, total number (N) students answering question varied. Percentages category calculated known data. Logistic regression models assess linear trends 20152021, controlling sex, race ethnicity, grade, p<0.05. On basis t-test analysis Taylor series linearization, p<0.05.** Persons Hispanic Latino (Hispanic) origin race categorized Hispanic; racial groups non-Hispanic.Overall, 18.0% students currently EVP 2021. The prevalence current EVP use varied sex, race ethnicity, sexual identity. For example, prevalence EVP use higher female students (21.4%) male students (14.9%); higher NH/OPI (24.7%), AI/AN (23.2%), White (20.3%), Hispanic (17.8%), multiracial (17.1%), Black students (14.0%) Asian students (5.5%); higher bisexual students (29.0%) heterosexual (16.4%), gay lesbian (15.8%), questioning students (15.7%).During 20152021, linear change current use EVP overall; however, linear increase female students (22.6% 2015; 10.5% 2017; 33.5% 2019; 21.4% 2021) linear decrease male students (from 25.6% 14.9%). There linear decrease Asian students (from 14.5% 5.5%), racial ethnic group. From 2019 2021, decreases observed current use EVP overall (from 32.7% 18.0%), female (from 33.5% 21.4%) male (from 32.0% 14.9",
-        "timestamp": "Thu May 04 19:48:49 +0000 2023"
+        "text": "ional).Approximately (30.0%) female students 2021 reported seriously considered attempting suicide 12 months survey, substantial increase compared 2019 (24.1%) . The percentage male students reporting seriously considered attempting suicide similar study period (2019 = 13.3%; 2021 = 14.3%). Increases seriously considered attempting suicide differed race, grade, sex sexual contacts female students. For example, prevalence significantly increased Black (PD = 6.8%; PR = 1.29), Hispanic (PD = 6.0%; PR = 1.27), White (PD = 7.1%; PR = 1.29) female students. Among male students, overall prevalence similar, increases observed Hispanic (PD = 2.8%; PR = 1.24), 11th-grade (PD = 3.2%; PR = 1.23), opposite sex sexual contacts (PD = 4.0%; PR = 1.27), sex sex sexual contacts (PD = 18.2%; PR = 1.47).TABLE 1Abbreviations: N/A = applicable; PD=prevalence difference; PR=prevalence ratio; Ref = referent group.* 2019: N = 13,677 respondents; 2021: N=17,232 respondents. Because state local questionnaires differ jurisdiction, students schools asked national YRBS questions. Therefore, total number (N) students answering question varied. Percentages category calculated known data. Absolute value presented. On basis t-test Taylor series linearization (p<0.05). 95% CI cross null value 1.0.** Persons Hispanic origin race categorized Hispanic; racial groups non-Hispanic. Prevalence estimates denominator <30 considered statistically unreliable suppressed.In 2021, Asian female students lower prevalence seriously considered attempting suicide compared White female students (PR = 0.77). The prevalence female students 9th, 10th, 11th grade seriously considered attempting suicide significantly greater (PR = 1.20, 1.31, 1.16, respectively) female students 12th grade. In addition, prevalence significantly higher LGBQ+ female students (PR = 2.06 lesbian gay; 2.60 bisexual; 1.80 questioning; 2.40 other) compared heterosexual students. Among males 2021, students 9th 10th grade likely (PR =0.72 0.77, respectively) students 12th grade report seriously considered attempting suicide. Similar female students, prevalence significantly higher LGBQ+ male students (PR = 3.05 gay; 3.45 bisexual; 2.40 questioning; 3.93 other) compared heterosexual students.Approximately fourth (23.6%) female students 2021 reported making suicide plan 12 months survey, significant increase 2019 (19.9%) . The percentage male students reporting making suicide plan stable study period (2019=11.3%; 2021=11.6%). Significant increases prevalence 2019 2021 reporting suicide plan observed Hispanic (PD=5.2%; PR=1.26), White (PD=3.7%; PR=1.19), 9th grade (PD=4.7%; PR=1.23), 10th grade (PD=6.6%; PR=1.33) female students female students sex opposite sex partners (PD=7.2%; PR=1.35). NH/OPI male students (PD=12.8%), male students sexual contact opposite sex partners (PD=3.2%; PR=1.25), sexual contact sex sex partners (PD=15.5%; PR=1.50) reported significant increases prevalence suicide plan 2019 2021.TABLE 2Abbreviations: N/A = applicable; PD=prevalence difference; PR=prevalence ratio; Ref = referent group.* 2019: N = 13,677 respondents; 2021: N=17,232 respondents. Because state local questionnaires differ jurisdiction, students schools asked national YRBS questions. Therefore, total number (N) students answering question varied. Percentages category calculated known data. Absolute value presented. On basis t-test Taylor series linearization (p<0.05). Prevalence estimates denominator <30 considered statistically unreliable suppressed.** Persons Hispanic origin race categorized Hispanic; racial groups non-Hispanic. 95% CI cross null value 1.0.In 2021, female students 9th 10th grade significantly likely (PR=1.28 1.37, respectively) 12th grade students report suicide plan. Female students reporting opposite sex sexual contacts (PR=1.81) sex sex partners likely (PR=3.33) sexual contact report suicide plan. In 2021, NH/OPI male students (PR=1.62) significantly likely White male students suicide plan. Additionally, male students reporting opposite sex sexual contacts (PR=2.38) sex sex partners likely (PR=6.89) sexual contact report suicide plan. Prevalence suicide plan significantly higher LGBQ+ students (females: PR=2.06 lesbian gay; 2.87 bisexual; 1.91 questioning; 2.44 other; males: PR=3.59 gay; 3.23 bisexual; 2.58 questioning; 4.00 other) compared heterosexual students.Reports suicide attempts 12 months survey significantly increased female students (PD=2.3%; PR=1.21) unchanged male students 2019 2021 . The prevalence reported attempted suicide 13.3% females 2021 6.6% males. Increases reports suicide attempts occurred White (PD = 3.0%; PR = 1.32), 10th grade (PD=4.6%; PR=1.41) female students, female students opposite sex sexual contacts (PD=4.7%, PR=1.41). In 2021, Black female students likely (PR=1.43) White female students report attempted suicide, 9th 10th grade (PR=1.54 1.52 respectively) female students compared 12th grade, LGBQ+ students (PR=1.86 lesbian gay; 3.26 bisexual; 1.53 ques",
+        "timestamp": "Thu May 04 22:33:10 +0000 2023"
     },
     {
         "annotations": [
             {
                 "id": [
-                    "mesh:C030848"
-                ],
-                "is_neural_normalized": true,
-                "mention": "EVP",
-                "obj": "drug",
-                "prob": 0.8057243227958679,
-                "span": {
-                    "begin": 254,
-                    "end": 257
-                }
-            },
-            {
-                "id": [
                     "CUI-less"
                 ],
                 "is_neural_normalized": false,
-                "mention": "bisexual students",
-                "obj": "cell_type",
-                "prob": 0.49740540981292725,
+                "mention": "heterosexual",
+                "obj": "cell_line",
+                "prob": 0.49484357237815857,
                 "span": {
-                    "begin": 506,
-                    "end": 523
-                }
-            },
-            {
-                "id": [
-                    "CUI-less"
-                ],
-                "is_neural_normalized": false,
-                "mention": "heterosexual students",
-                "obj": "cell_type",
-                "prob": 0.5308849215507507,
-                "span": {
-                    "begin": 550,
-                    "end": 571
+                    "begin": 30,
+                    "end": 42
                 }
             },
             {
@@ -477,65 +226,38 @@
                     "NCBITaxon:9606"
                 ],
                 "is_neural_normalized": false,
-                "mention": "person",
+                "mention": "Persons",
                 "obj": "species",
-                "prob": 0.8751922845840454,
+                "prob": 0.8299328088760376,
                 "span": {
-                    "begin": 1461,
-                    "end": 1467
+                    "begin": 1210,
+                    "end": 1217
                 }
             },
             {
                 "id": [
-                    "mesh:D001068"
+                    "NCBITaxon:9606"
                 ],
                 "is_neural_normalized": false,
-                "mention": "eating disorders",
-                "obj": "disease",
-                "prob": 0.9999516606330872,
+                "mention": "Persons",
+                "obj": "species",
+                "prob": 0.9180331826210022,
                 "span": {
-                    "begin": 1955,
-                    "end": 1971
+                    "begin": 2844,
+                    "end": 2851
                 }
             },
             {
                 "id": [
-                    "mesh:D001523"
-                ],
-                "is_neural_normalized": true,
-                "mention": "emotional distress",
-                "obj": "disease",
-                "prob": 0.9966936111450195,
-                "span": {
-                    "begin": 1973,
-                    "end": 1991
-                }
-            },
-            {
-                "id": [
-                    "mesh:D001008",
-                    "mim:607834"
+                    "CUI-less"
                 ],
                 "is_neural_normalized": false,
-                "mention": "anxiety",
-                "obj": "disease",
-                "prob": 0.9999580383300781,
+                "mention": "male",
+                "obj": "species",
+                "prob": 0.6819415092468262,
                 "span": {
-                    "begin": 1993,
-                    "end": 2000
-                }
-            },
-            {
-                "id": [
-                    "mesh:D009497"
-                ],
-                "is_neural_normalized": false,
-                "mention": "depression",
-                "obj": "disease",
-                "prob": 0.9999707937240601,
-                "span": {
-                    "begin": 2002,
-                    "end": 2012
+                    "begin": 3041,
+                    "end": 3045
                 }
             },
             {
@@ -545,154 +267,10 @@
                 "is_neural_normalized": false,
                 "mention": "COVID-19",
                 "obj": "disease",
-                "prob": 0.9992109537124634,
+                "prob": 0.9955481290817261,
                 "span": {
-                    "begin": 2029,
-                    "end": 2037
-                }
-            },
-            {
-                "id": [
-                    "mesh:D009538"
-                ],
-                "is_neural_normalized": false,
-                "mention": "nicotine",
-                "obj": "drug",
-                "prob": 0.9986497759819031,
-                "span": {
-                    "begin": 2168,
-                    "end": 2176
-                }
-            },
-            {
-                "id": [
-                    "mesh:D009538"
-                ],
-                "is_neural_normalized": false,
-                "mention": "nicotine",
-                "obj": "drug",
-                "prob": 0.9896738529205322,
-                "span": {
-                    "begin": 2197,
-                    "end": 2205
-                }
-            },
-            {
-                "id": [
-                    "mesh:D001008",
-                    "mim:607834"
-                ],
-                "is_neural_normalized": true,
-                "mention": "anxiety depression",
-                "obj": "disease",
-                "prob": 0.9995394349098206,
-                "span": {
-                    "begin": 2234,
-                    "end": 2252
-                }
-            },
-            {
-                "id": [
-                    "CUI-less"
-                ],
-                "is_neural_normalized": false,
-                "mention": "youths",
-                "obj": "species",
-                "prob": 0.6038298010826111,
-                "span": {
-                    "begin": 2991,
-                    "end": 2997
-                }
-            },
-            {
-                "id": [
-                    "CUI-less"
-                ],
-                "is_neural_normalized": false,
-                "mention": "youths",
-                "obj": "species",
-                "prob": 0.526150107383728,
-                "span": {
-                    "begin": 3071,
-                    "end": 3077
-                }
-            },
-            {
-                "id": [
-                    "mesh:D009538"
-                ],
-                "is_neural_normalized": false,
-                "mention": "nicotine",
-                "obj": "drug",
-                "prob": 0.9948654770851135,
-                "span": {
-                    "begin": 3235,
-                    "end": 3243
-                }
-            },
-            {
-                "id": [
-                    "mesh:D009538"
-                ],
-                "is_neural_normalized": false,
-                "mention": "nicotine",
-                "obj": "drug",
-                "prob": 0.9990518689155579,
-                "span": {
-                    "begin": 3324,
-                    "end": 3332
-                }
-            },
-            {
-                "id": [
-                    "mesh:D009538"
-                ],
-                "is_neural_normalized": false,
-                "mention": "nicotine",
-                "obj": "drug",
-                "prob": 0.9987804293632507,
-                "span": {
-                    "begin": 3434,
-                    "end": 3442
-                }
-            },
-            {
-                "id": [
-                    "mesh:D014029"
-                ],
-                "is_neural_normalized": false,
-                "mention": "nicotine dependence",
-                "obj": "disease",
-                "prob": 0.997556746006012,
-                "span": {
-                    "begin": 3512,
-                    "end": 3531
-                }
-            },
-            {
-                "id": [
-                    "mesh:D009538"
-                ],
-                "is_neural_normalized": false,
-                "mention": "nicotine",
-                "obj": "drug",
-                "prob": 0.9973702430725098,
-                "span": {
-                    "begin": 3512,
-                    "end": 3520
-                }
-            },
-            {
-                "id": [
-                    "mesh:D009538"
-                ],
-                "is_neural_normalized": false,
-                "mention": "nicotine",
-                "obj": "drug",
-                "prob": 0.9361847639083862,
-                "span": {
-                    "begin": 3626,
-                    "end": 3634
+                    "begin": 3236,
+                    "end": 3244
                 }
             },
             {
@@ -702,36 +280,23 @@
                 "is_neural_normalized": false,
                 "mention": "COVID-19",
                 "obj": "disease",
-                "prob": 0.9986738562583923,
+                "prob": 0.9830044507980347,
                 "span": {
-                    "begin": 3874,
-                    "end": 3882
+                    "begin": 3351,
+                    "end": 3359
                 }
             },
             {
                 "id": [
-                    "mesh:D009538"
+                    "mesh:D000086382"
                 ],
                 "is_neural_normalized": false,
-                "mention": "nicotine",
-                "obj": "drug",
-                "prob": 0.9747276902198792,
+                "mention": "COVID-19",
+                "obj": "disease",
+                "prob": 0.9975640773773193,
                 "span": {
-                    "begin": 4655,
-                    "end": 4663
-                }
-            },
-            {
-                "id": [
-                    "mesh:D009538"
-                ],
-                "is_neural_normalized": false,
-                "mention": "nicotine",
-                "obj": "drug",
-                "prob": 0.9994158744812012,
-                "span": {
-                    "begin": 4697,
-                    "end": 4705
+                    "begin": 3528,
+                    "end": 3536
                 }
             },
             {
@@ -739,12 +304,25 @@
                     "CUI-less"
                 ],
                 "is_neural_normalized": false,
-                "mention": "EVP",
-                "obj": "DNA",
-                "prob": 0.48102882504463196,
+                "mention": "female",
+                "obj": "cell_line",
+                "prob": 0.5347814559936523,
                 "span": {
-                    "begin": 4758,
-                    "end": 4761
+                    "begin": 3945,
+                    "end": 3951
+                }
+            },
+            {
+                "id": [
+                    "CUI-less"
+                ],
+                "is_neural_normalized": false,
+                "mention": "young",
+                "obj": "species",
+                "prob": 0.6716844439506531,
+                "span": {
+                    "begin": 4981,
+                    "end": 4986
                 }
             },
             {
@@ -752,31 +330,31 @@
                     "NCBITaxon:9606"
                 ],
                 "is_neural_normalized": false,
-                "mention": "participants",
+                "mention": "children",
                 "obj": "species",
-                "prob": 0.937650740146637,
+                "prob": 0.9402300119400024,
                 "span": {
-                    "begin": 4964,
-                    "end": 4976
+                    "begin": 4987,
+                    "end": 4995
                 }
             }
         ],
-        "text": "%) students, AI/AN (from 47.3% 23.2%), Asian (from 13.0% 5.5%), Black (from 19.7% 14.0%), Hispanic (from 31.2% 17.8%), NH/OPI (from 38.8% 24.7%), White (from 38.3% 20.3%), multiracial students (from 33.5% 17.1%).Overall, 5.0% students reported daily use EVP 2021. The prevalence daily use EVP varied race ethnicity sexual identity. For example, prevalence daily use EVP higher NH/OPI (8.0%), White (6.5%), multiracial (5.3%), Hispanic (3.4%), Black students (3.1%) Asian students (1.2%). Prevalence higher bisexual students (7.5%) questioning (4.6%) heterosexual students (4.4%).During 20152021, linear increase occurred daily use EVP overall (from 2.0% 5.0%), female (from 1.1% 5.6%) male students (from 2.8% 4.5%), Black (from 1.1% 3.1%), Hispanic (from 2.6% 3.4%), White (from 1.9% 6.5%), multiracial students (from 2.8% 5.3%). From 2019 2021, decreases observed daily use EVP use overall (from 7.2% 5.0%), male students (from 7.9% 4.5%), Hispanic (from 5.2% 3.4%) White students (from 9.3% 6.5%).Among 18.0% students currently EVPs, 54.1% indicated usually got bought friend, family member, else. Other responses question students usually obtained EVP included, bought vape shop tobacco shop (12.4%), bought convenience store, supermarket, discount store, gas station (6.8%), bought mall shopping center kiosk stand (0.5%), bought Internet, product website, vape store website, website like eBay, Amazon, Facebook Marketplace, Craigslist (1.7%), took store person (2.8%), got way (21.7%).In 2021, (36.2%) students EVPs (18.0%) students currently EVPs. Overall, EVP use decreased daily EVP use increased 20152021; however, ever, current, daily use EVPs decreased 2019 2021, finding consistent findings national surveillance systems, Monitoring Future .The 2021 YRBS documented variation patterns EVP use demographic groups. Prevalence use current use EVPs higher female students male students. During 20192022, adolescent females reported higher rates eating disorders, emotional distress, anxiety, depression related ongoing COVID-19 pandemic, explain increases EVP use substances . Youths engage vaping behaviors method dealing stressors potentially create cycle nicotine dependence symptoms nicotine withdrawal include symptoms anxiety depression .This report disaggregated bisexual students lesbian gay students, revealing differences EVP use groups. Bisexual students higher prevalence current EVP use lesbian gay, questioning, heterosexual students. This finding contributes evidence base tobacco product usage sexual minority (e.g., lesbian gay, bisexual, questioning ) youths differs sexual orientation .EVP use lower Asian students comparison racial ethnic student groups. In general, prevalence use, current use, daily use EVPs Asian students lower Black, Hispanic, NH/OPI, White, multiracial students. This finding explained research found social cultural influences protective factors tobacco product substance use behaviors Asian youths . Identifying risk protective factors youths essential developing tobacco prevention cessation programs address needs youths.It concerning daily EVP use increased Black, Hispanic, multiracial White students 20152021. Observed patterns increased daily use be, part, related increase nicotine concentrations U.S. e-cigarettes . A recent study found that, 20132018, average nicotine concentration e-cigarettes sold increased 80% flavor categories rechargeable e-cigarettes . Exposure nicotine adolescence affect learning, memory, attention increases risk future nicotine dependence (,). Evidence-based cessation programs tailored culturally specific youths needed help youths nicotine dependent abstain tobacco product usage.Overall, use, current use, daily use EVPs high school students decreased 2019 2021. Certain factors contributed decline, including implementation policies restricting sale flavored tobacco products, COVID-19 pandemic, provided youths fewer opportunities purchase EVPs interact peers use tobacco products substances (,,). Regulatory efforts ongoing national, state, local levels restrict youths access EVPs and, thus, decrease use EVPs youths. Findings 2021 YRBS found currently use EVPs, half (54.1%) got EVPs friend, family member, else, indicating students finding means purchase gain access EVPs.General limitations YRBS available overview report supplement . The findings report subject additional limitations. First, YRBS question addressing students usually obtained EVPs limited respondents response. Students obtained products multiple sources; therefore, extent students use sources likely underrepresented. Second, EVP use defined survey limited vaping products deliver nicotine. Therefore, results overestimate nicotine-containing EVP use youths. Finally, possible assess EVP use subpopulations racial ethnic categories included report (e.g., disaggregating students racial ethnic subgroups: Indian, Vietnamese, Korean). Thus, categories race ethnicity survey reflect diversity participants identities, potentially",
-        "timestamp": "Thu May 04 19:48:54 +0000 2023"
+        "text": "tioning; 2.47 other) compared heterosexual students. Also 2021, female students reporting opposite sex sexual contacts (PR=2.50) sex sex partners (PR=5.19) likely sexual contact report attempted suicide. In 2021, AI/AN Black male students reports attempted suicide significantly higher (PR=2.37, 2.05 respectively) White male students. Among males 2021, LGBQ+ students (PR=3.93 gay; 3.44, bisexual; 2.81 questioning; 6.60 other) likely reported attempting suicide compared heterosexual students, male students reporting opposite sex sexual contacts (PR=2.96) sex sex partners likely (PR=10.72) sexual contact report attempted suicide.TABLE 3Abbreviations: N/A = applicable; PD=prevalence difference; PR=prevalence ratio; Ref = referent group.* 2019: N = 13,677 respondents; 2021: N=17,232 respondents. Because state local questionnaires differ jurisdiction, students schools asked national YRBS questions. Therefore, total number (N) students answering question varied. Percentages category calculated known data. Absolute value presented. On basis t-test Taylor series linearization (p<0.05). 95% CI cross null value 1.0.** Prevalence estimates denominator <30 considered statistically unreliable suppressed. Persons Hispanic origin race categorized Hispanic; racial groups non-Hispanic.The prevalence attempted suicide required medical treatment relatively stable 2019 2021 female (2019 = 3.3%; 2021 = 3.9%) male (2019 = 1.7%; 2021 = 1.7%) students overall student characteristics . In 2021, female Hispanic students likely (PR=1.31) female White students, 9th grade female students (PR=1.51) likely 12th grade students, report attempted suicide required medical treatment. Bisexual identifying female students likely (PR=4.23 3.04, respectively) heterosexual female students report attempted suicide required medical treatment. Black (PR=2.64) Hispanic (PR=1.61) male students likely White male students report attempted suicide required medical treatment. Among males 2021, LGBQ+ students (PR=7.93 gay; 7.23 bisexual; 7.06 questioning; 14.31 other) likely report attempted suicide required medical treatment compared heterosexual students. Students opposite sex sexual contacts (PR = 5.08 female; 4.09 male) sex sexes sexual contacts likely (PR = 14.36 female; 30.15 male) students sexual contact report attempted suicide required medical treatment.TABLE 4Abbreviations: N/A = applicable; PD=prevalence difference; PR=prevalence ratio; Ref = referent group.* 2019: N = 13,677 respondents; 2021: N=17,232 respondents. Because state local questionnaires differ jurisdiction, students schools asked national YRBS questions. Therefore, total number (N) students answering question varied. Percentages category calculated known data. Absolute value presented. Prevalence estimates denominator <30 considered statistically unreliable suppressed. Persons Hispanic origin race categorized Hispanic; racial groups non-Hispanic.** 95% CI cross null value 1.0.Overall results 2019 2021 YRBSs highlight stable prevalence suicidal thoughts behaviors male students outcomes, increases observed certain subgroups male students significant increases female students outcomes (i.e., suicidal thoughts, plans, attempts). This similar trends observed COVID-19 pandemic . These findings consistent trends rising rates suicide risk females  highlight potential effect COVID-19 pandemic mitigation measures increased students social isolation anxiety, leading onset exacerbation adolescent mental health concerns suicidal thoughts behaviors .The COVID-19 pandemic differential effect suicide risk male female youths . Consistent study cited 50.6% increase mean weekly emergency department visits February March 2021 suspected suicide attempts females aged 1217 years versus 3.7% males age , current study found significant increases female students reported seriously considered attempting suicide, making suicide plan, attempting suicide. In 2021, approximately female students reported seriously considered attempting suicide, approximately fourth reported making suicide plan, 13.3% reported attempting suicide.In 2021, 9th- 10th- grade female students significantly likely 12th-grade students seriously consider attempting suicide, suicide plan report suicide attempt; 9th-grade female students compared 12th-grade female students likely suicide attempt required medical treatment. These findings concur previous research indicating females younger grade levels (7th 9th grade) likely males older grade levels (11th 12th grade) report nonfatal self-harm suicide attempts . Because increased prevalence suicidal thoughts behaviors female students, particularly 9th 10th grade, importance early prevention intervention prevent suicide evident. Given multiple developmental needs, determining best implement developmentally appropriate, evidence-based strategies reach elementary middle school-age youths critical step disrupting upward trend suicidal behaviors require research programs effective young children yout",
+        "timestamp": "Thu May 04 22:33:16 +0000 2023"
     },
     {
         "annotations": [
             {
                 "id": [
-                    "CUI-less"
+                    "NCBIGene:6906"
                 ],
-                "is_neural_normalized": false,
-                "mention": "youths",
-                "obj": "species",
-                "prob": 0.754642903804779,
+                "is_neural_normalized": true,
+                "mention": "LGBQ",
+                "obj": "gene",
+                "prob": 0.5589529871940613,
                 "span": {
-                    "begin": 225,
-                    "end": 231
+                    "begin": 242,
+                    "end": 246
                 }
             },
             {
@@ -786,10 +364,10 @@
                 "is_neural_normalized": false,
                 "mention": "youths",
                 "obj": "species",
-                "prob": 0.5434615015983582,
+                "prob": 0.4878460168838501,
                 "span": {
-                    "begin": 364,
-                    "end": 370
+                    "begin": 488,
+                    "end": 494
                 }
             },
             {
@@ -797,38 +375,12 @@
                     "CUI-less"
                 ],
                 "is_neural_normalized": false,
-                "mention": "youths",
+                "mention": "students",
                 "obj": "species",
-                "prob": 0.5922183990478516,
+                "prob": 0.5539668202400208,
                 "span": {
-                    "begin": 888,
-                    "end": 894
-                }
-            },
-            {
-                "id": [
-                    "CUI-less"
-                ],
-                "is_neural_normalized": false,
-                "mention": "EVP",
-                "obj": "DNA",
-                "prob": 0.5498120784759521,
-                "span": {
-                    "begin": 1439,
-                    "end": 1442
-                }
-            },
-            {
-                "id": [
-                    "CUI-less"
-                ],
-                "is_neural_normalized": false,
-                "mention": "youths",
-                "obj": "species",
-                "prob": 0.6515963673591614,
-                "span": {
-                    "begin": 1489,
-                    "end": 1495
+                    "begin": 640,
+                    "end": 648
                 }
             },
             {
@@ -838,23 +390,10 @@
                 "is_neural_normalized": false,
                 "mention": "LGBQ",
                 "obj": "cell_line",
-                "prob": 0.4973999261856079,
+                "prob": 0.6237788796424866,
                 "span": {
-                    "begin": 1764,
-                    "end": 1768
-                }
-            },
-            {
-                "id": [
-                    "NCBITaxon:9606"
-                ],
-                "is_neural_normalized": false,
-                "mention": "persons",
-                "obj": "species",
-                "prob": 0.5096584558486938,
-                "span": {
-                    "begin": 1881,
-                    "end": 1888
+                    "begin": 798,
+                    "end": 802
                 }
             },
             {
@@ -862,70 +401,43 @@
                     "CUI-less"
                 ],
                 "is_neural_normalized": false,
-                "mention": "youths",
+                "mention": "students",
                 "obj": "species",
-                "prob": 0.5512032508850098,
+                "prob": 0.7205926775932312,
                 "span": {
-                    "begin": 2116,
-                    "end": 2122
+                    "begin": 1556,
+                    "end": 1564
                 }
             },
             {
                 "id": [
-                    "CUI-less"
+                    "mesh:D000086382"
                 ],
                 "is_neural_normalized": false,
-                "mention": "youths",
-                "obj": "species",
-                "prob": 0.7621691226959229,
-                "span": {
-                    "begin": 2520,
-                    "end": 2526
-                }
-            },
-            {
-                "id": [
-                    "CUI-less"
-                ],
-                "is_neural_normalized": false,
-                "mention": "youths",
-                "obj": "species",
-                "prob": 0.6901600360870361,
-                "span": {
-                    "begin": 2928,
-                    "end": 2934
-                }
-            },
-            {
-                "id": [
-                    "mim:226400",
-                    "mesh:D004819"
-                ],
-                "is_neural_normalized": true,
-                "mention": "EVP",
+                "mention": "COVID-19",
                 "obj": "disease",
-                "prob": 0.999294638633728,
+                "prob": 0.9998457431793213,
                 "span": {
-                    "begin": 3068,
-                    "end": 3071
+                    "begin": 1639,
+                    "end": 1647
                 }
             },
             {
                 "id": [
-                    "CUI-less"
+                    "mesh:D000086382"
                 ],
                 "is_neural_normalized": false,
-                "mention": "youths",
-                "obj": "species",
-                "prob": 0.877198338508606,
+                "mention": "COVID-19",
+                "obj": "disease",
+                "prob": 0.9859418869018555,
                 "span": {
-                    "begin": 3076,
-                    "end": 3082
+                    "begin": 4337,
+                    "end": 4345
                 }
             }
         ],
-        "text": "masks nuanced differences EVP use racial ethnic populations.The declines ever, current, daily EVP use high school students 20192021 encouraging; however, prevalence EVP use students remains high. To reduce prevalence EVP use youths, public health professionals consider community-based participatory research develop tobacco prevention cessation programs tailored youths (https://pubmed.ncbi.nlm.nih.gov/20147663). For example, intervention piloted rural high school students Kentucky students informed risks e-cigarette use peers provided cessation resources information help friends abstain cigarette use (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7789 Results study yielded positive outcomes peer-led intervention related increased awareness risks associated e-cigarette use desire students address e-cigarette epidemic communities.Future research explore factors influence EVP use youths (e.g., neighborhood poverty socioeconomic status), access health care, access healthy food, opportunities physical activity. Such factors conceptualized social determinants health influence EVP use students. Addressing social determinants health developing youth-centric tobacco control programs improve evidence-based interventions reduce tobacco product use initiation students provide tailored cessation services youths use tobacco products.Future research explore EVP use youths identities examined report. There dearth research describing EVP use nonbinary, gender fluid, gender expansive youths (https://www.edi.nih.gov/people/sep/lgbti/safezone sexual orientation captured categories lesbian, gay bisexual; youths intersectional identities including LGBQ+ certain racial ethnic minority groups. Future research uses intersectional approach understanding EVP use LGBQ+ youths youths racial ethnic identities inform evidence-based tobacco control interventions promising practices persons risk EVP use.Finally, approximately half high school youths currently use EVPs getting buying products friend, family member, else. These findings provide opportunity use practices focus social influences tobacco product usage youths. Programs like Truth Initiatives This Quitting (https://truthinitiative.org/thisisquitting) tailored youths address social behavioral factors lead EVP tobacco product use. Evidence-based interventions individual- community-level provide tools youths address peer pressure, encourage self-efficacy goal-setting, increase knowledge base EVP use associated harms reduce eliminate tobacco product use youths (https://catch.org/wp-content/uploads/2021/05/SAMH use U.S. high school students remains public health concern. During 20152021, linear decrease observed current EVP use high school students overall; linear increase observed female students reported current EVP use. In addition, daily EVP use increased overall female, male, Black, Hispanic, multiracial, White students 20152021. Eliminating EVP use youths requires evidence-based strategies practices culturally relevant tailored communities risk sustained EVP use. Continued surveillance EVP use youths necessary guide evaluate public health strategies local, state, tribal national levels.",
-        "timestamp": "Thu May 04 19:48:57 +0000 2023"
+        "text": "hs implementation.In 2021, female male students reported sex sexual contact opposite sex sexual contact, prevalence outcomes significantly higher students sexual contact. In addition, 2021, prevalence outcomes found significantly higher male LGBQ+ students compared male heterosexual students. The prevalence outcomes (seriously consider suicide, plan attempt) higher female LGBQ+ students compared female heterosexual students. These findings consistent previous research indicate LGBQ+ youths increased risk suicidal thoughts behaviors  (https://www.cdc.gov/suicide/facts/disparities-in- Creating safe supportive school environment LGBQ+ students implementing gay straight alliances, training teachers LGBQ+ inclusivity, LGBQ+ curriculum, associated lower odds suicide-related thoughts behaviors LGBQ+ students (https://www.liebertpub.com/doi/10.1089/lgbt.2021. Creating affirming environments home online spaces determined reduce suicide attempts LGBQ+ youths (https://www.thetrevorproject.org/resources/articl prevalence increases seriously considered attempting suicide, suicide plan, reported making suicide attempt observed 2019 2021 race ethnicity. For example, increases noted 2019 2021 Black, Hispanic, White female students seriously considered attempting suicide, White, Hispanic female students suicide plan, White female students reported attempting suicide. A substantial number students rely school-based mental health care, especially youths racial ethnic minority groups under-resourced families ; increased prevalence suicidal behaviors students reflect lack access mental health care schools closed offset transmission COVID-19.Although lack access mental health services contributed increased suicide risk, certain factors, including substance misuse, family relationship problems, community violence, discrimination, contributed increased risk . These factors highlight need comprehensive approach suicide prevention aimed preventing suicide risk, supporting increased risk suicide, preventing reattempts, supporting survivors suicide loss .General limitations YRBS available overview report supplement . The findings report subject additional limitations. First, 2021 national YRBS expanded options sexual identity question inclusive students self-identify; thus, results question compared results previous surveys. Second, analysis conducted students stratify based students considered suicide; suicidal behaviors differ experienced suicidal thoughts not.There marked differences suicidal thoughts behaviors sexual orientation. Future research examining intersectional identities social norms gender, race ethnicity, sexual orientation contribute risk suicidal behaviors guide development effective interventions. Expanding research evidence factors contributing racial ethnic differences suicidal thoughts behaviors guide development inclusive intervention approaches. Increasing access culturally linguistically relevant mental health services improve suicide prevention racial ethnic minority youths connecting services address lived experiences . Better understanding pandemic exacerbated suicide risk important developing school community-based interventions implementation times infrastructure disruption. These interventions address common risk protective factors considering student sex, grade, sexual identity, race ethnicity.The CDC Suicide Prevention Resource Action identifies strategies comprehensive approach suicide prevention  addresses multiple factors associated suicide risk. The implementation school-based strategies, addition community-based supports, potential great reach importance youth suicide prevention. For example, creating safe supportive environments students promoting school connectedness, teaching coping problem solving, gatekeeper training, implementing mental health services programs support youths school (,).From 2019 2021, prevalence suicidal thoughts behaviors increased certain demographic groups stable groups. The increased prevalence suicidal thoughts behaviors females, particularly 9th- 10th-grade females Black, Hispanic, White female students, youths identifying LGBQ+ youths sex sexual contact, point notable disparities warranting consideration. Understanding stable prevalence suicidal thoughts behaviors males overall major infrastructure disruption (e.g., COVID-19 pandemic) yield insights protective factors. A combination risk protective factors individual, relationship, community, societal levels likely contributes differences suicidal thoughts behaviors sexual minority youths, different racial ethnic groups differences observed sex grade. A comprehensive approach suicide prevention, reduces risk supports youths increased risk, provides support risk ultimately save lives .",
+        "timestamp": "Thu May 04 22:33:21 +0000 2023"
     },
     {
         "annotations": [
@@ -1652,7 +1164,7 @@
             }
         ],
         "text": "Blood cancer diagnosed late claims lives breast prostate cancereach year (Blood Cancer UK). Nearly patients diagnosed viaemergency admission hospital. Survival patients diagnosed emergency route hasworse outcomes patients presented routes (Kane etal.,). For diagnosed emergency, 40%will live 3 years compared 77% diagnosed GP(Blood Cancer UK, ). Thesepatients fewer options terms treatment greater risk ofmorbidity. Improving earlier diagnosis blood cancer involves understanding thepatient pathway opportunities intervene. This approach appliedacross different cancer types (Cassim etal., ; Grimley, Kato Grunfeld, ; Lima etal., ; Najor etal., ; van Os etal., ) focused socio-demographics (Fish etal., ; McCutchan etal., ) regional (McCutchan etal.,) influences key patient behaviours,such medical help-seeking. Findings suggest factors low symptom awareness(Petrova etal., ),perceived challenges accessing primary care (Cassim etal., ) emotional barriers (e.g. fear andembarrassment) (Fish etal., ) influence help-seeking, unclear relevantto blood cancer. This blood cancers (including leukaemia, lymphoma multiplemyeloma) broad symptom signatures comprising symptoms low predictive value,which means difficult suspect diagnose (Koo etal., ).Frameworks help-seeking behaviours cancers suggest specific heuristicsinfluence symptom appraisal help-seeking. For example, rate change refers tosymptoms worsening, increasing sudden onset trigger ahelp-seeking response (Kummer etal., ). However, heuristics applicable blood cancer tothe predominance non-specific symptoms including fatigue susceptibility toinfections. Previous qualitative work shown concepts related peoplesperceived eligibility healthcare (e.g. candidacy) confidence reaching desiredoutcome (Renzi etal., ;Howell etal., ) impact onwhether patients likely seek help promptly impact visitthe doctor following all-clear diagnosis (Renzi etal., ), research specific toexperiences blood cancer patients.The challenge posed blood cancer evident diagnostic pathway; bloodcancer patients high frequency multiple consultations primary care beforespecialist referral (Lyratzopoulos etal., ), prolonged diagnostic intervals (Howelletal., ) lesslikely fast-tracked suspected cancer GPs patients cancertypes (Zhou etal., ). Todate synthesis factors influencing blood cancer care pathway.We undertook rapid review literature relating diagnosis blood cancers, tofind factors contribute long diagnostic intervals, including symptomrecognition, appraisal help-seeking behaviours. Previous reviews identifiedfactors cause diagnostic delays cancers (., ) attempted quantify delays onetype blood cancer (Koshiaris, Oke, etal., ). This analysis distinct focuses blood cancersas group diseases non-specific heterogeneous symptoms, (Blood CancerUK, ; Cerquaetal., ) theseaffect patient cognition behaviour.This review forms BLood cancer: understanding public Awareness,help-seeking behaviours Diagnostic managEment (BLADE study). We chose rapidreview methodology synthesise current literature provide timely findings wouldinform subsequent strands BLADE study blood cancer policy (Hartlingetal., ). The reviewfollows methods described . . The review rapid followingmodifications:Targeted research questionsLimiting searches electronic databasesReduced timeframeExclusion grey literatureLimiting inclusion criteria date (20012021) English language.Two electronic databases (Medine PsychINFO) searched 20th July 2021 theOvid platform, including results 1st January 2001. The search strategy developedbased combination keyword expert search strings compiled byconsulting similar published reviews exploring relevant MeSH terms twodatabases. The search strategy Medline follows:Leukaemia, Myeloid, Acute/or Hematologic Neoplasms/orLymphoma/or Myelodysplastic Syndromes/orLeukaemia/or Multiple Myeloma/or blood cancerSymptom appraisal appraisal symptom awareness help-seeking seek help orearly presentation late presentation healthcare-seeking patient interval orhelp-seeking interval diagnostic interval diagnos$ delay patient delay orexperiences symptomatic presentation1 2.The search strategy PsychINFO below:blood cancer haematological cancer haematological neoplasms haematologicalmalignancies lymphoma leukaemia myeloma myelodysplastic syndromes ormyeloproliferative neoplasms multiple myelomaSymptom appraisal appraisal symptom awareness help-seeking seek help orearly presentation late presentation healthcare-seeking patient interval orhelp-seeking interval diagnostic interval diagnos$ delay patient delay orexperiences symptomatic presentation1 2.MeSH terms shown bold. The search results limited language (English) andby date (20012021).Both qualitative quantitative studies included review provided metthe criteria displayed Table. We includedstudies adults children, considered help-seeking appraisal processesto broadly similar, processes experienced parents orcarers proxy case early childhood cancers.Table 1.Eligibility criteriaStudies screened",
-        "timestamp": "Thu May 04 19:48:59 +0000 2023"
+        "timestamp": "Thu May 04 22:33:23 +0000 2023"
     },
     {
         "annotations": [
@@ -1931,7 +1443,7 @@
             }
         ],
         "text": "abstract text eligibility reviewers (LB andGB) independently, minimum 20% double coding ensure reliability ofdecision-making; disagreements inclusion resolved discussion thewider study team. We completed additional searches key authors names relevantsearch terms web engine Google Scholar, searching reference lists. Thisresulted additional papers.All articles formally assessed quality Mixed Methods Appraisal Tool(MMAT) Version 2018  (Hong etal., ). No papers excluded asa consequence. The qualitative papers contained poor quality items, issueswere associated deficiency information methods. The main limitations thequantitative papers included lack information representativeness thesamples compared target population risk nonresponse bias.We extracted information study spreadsheet, including authors, title,year, journal reference, country, sample size, gender split, age range, participantcharacteristics, clinical setting, data type, study design, analysis method includedblood cancer types. The Model Pathways Treatment (MPT) framework beused direct research early diagnosis cancer (Scott etal.,). In study, parts theframework extract findings included study categories:AppraisalHelp-seekingDiagnostic intervalOther.The fourth category included help capture data fit easily intothe intervals MPT. For example, findings traversed category orcontextual information availability blood testing.Our analysis proceeded data synthesis techniques drawn rapid methodologiessuch summarising key findings, regular discussions authors iterative cyclesof interpretation. This produced narrative synthesis studies, chartsand tables summarising quantifiable aspects.Figure  outlines searching identificationof eligible studies review. The searches Medline PsychINFO produced 492records. These articles imported Rayyan systematic review software whereduplicates removed. Initial screening titles abstracts excluded 413 articles,leaving 32 remaining. A full-text review produced final sample 15 studies, afterexcluding 17 ineligible review.Ten articles UK, United States, Brazil, fromLithuania South Africa. All studies published 2008 2019.Full study details including participant characteristics, data collection findings canbe found Tables .Table 2.Characteristics studies included reviewTable 3.Summary included studiesSeven studies aimed estimate delays diagnosing blood cancers quantitativeapproaches. The reported delays ranged 30 days 7 months. These studies varied intheir approach measurement delay, including self-report (n = 3), GP patientrecords (n = 4). Four studies combination both. Self-report methods includedface-to-face interviews postal surveys. The intervals defined fromdifferent time points. Additionally, studies focused intervals, forexample, Antel etal. ,whereas studies attempted measure interval, example, Howelletal. . We noted thatstudies published Aarhus statement/MPT (Weller etal., ; Scott etal., ) defined cancer delay intervals bydiscrete events time presentation, time referral secondary care andtime diagnosis, consistent reporting. There exceptions however(e.g. Dapkeviit etal., )which report delay MPT intervals. This reflect differences inhealth systems.When intervals measured, interest greatestdelay varied studies blood cancer types. The commonanalytical approach decide constitute delay perform logisticregression, correlates (e.g. demographics) included model delayed/notdelayed dependent variable. One study linear regression thereforecontinuous measure delay (Dapkeviit etal., ). One study interval symptom onset presentationat primary care, 3-month threshold define delay (Howelletal., ). Two studies usedthe interval symptom onset diagnosis measure delay, variationin definition, example, study defined delay >30 days (Linsetal., ) anotherused distribution diagnosis times identify patients experiencing greater delaysgreater median (Friese etal., ). One study interval presentation diagnosis, athreshold 6 weeks define delay (Antel etal., ).We noted studies samples small use logistic regression optimally,and studies justify sample size. Those retrospective studies basedon case note review insufficient information data quality handledmissing data. Overall, appraised quantitative sample lack robust examples ormethodological rigour.Our data analysis produced number factors associated delayed diagnosis termsof disease-related factors, patient characteristics health system factors (Table). There consistent pattern factorsassociated delay quantitative studies, explanations howdisease patient-related characteristics contributed delay related lowercancer suspicion groups (i.e. way disease presented orwho presenting disease). There relatively little discussion healthsystem factors (being focus study younger people).Table 4.Factors associated delay identified reviewed studiesA wide variety symptoms reported relation multiple blood cancer typesincluding fever, pallor/skin change, fatigue tiredness, non-blanching rash,behavioural changes, bodily pain",
-        "timestamp": "Thu May 04 19:49:05 +0000 2023"
+        "timestamp": "Thu May 04 22:33:30 +0000 2023"
     },
     {
         "annotations": [
@@ -2561,7 +2073,7 @@
             }
         ],
         "text": "(particularly bones/joint back), cough, lump,rectal bleeding, abdominal swelling, nausea, sweating, weakness, feeling sickly orgenerally unwell, weight loss, respiratory problems, swollen lymph nodes, bleeding,itching, thirst, stomach tenderness hoarseness (.,; Gibson etal., ; Clarke etal., ; Howell etal., , , ).These symptoms specific blood cancers, studies reported variety ofalternative interpretations patients. We synthesised findings produce afour-part typology symptom interpretation.Nothing wrong  symptoms compatible normal state ofhealthIn interpretation, participants judged experiencing ofthe normal functioning body. This particular feature theirbody, (Gibson etal., ) ageing (Howell etal., ). This long-lasting nature thesymptoms. For example, Gibson etal. reported woman hadexperienced symptoms 10 years (including rectal bleeding abdominalswelling) integrated symptoms normal interpretation ofhealth, saying The symptoms (Participant 1) (Gibsonetal., ). This typology includedparticipants sure symptoms existed werehard feel sure normal:Patient appraisal symptoms health changes described ongoingby participants, observation monitoring occurring periodically orcontinuously symptom diagnosis. When normal health notregained, appraisal said deliberate rigorous. It involved,for example, checking comparing affected non-affected sites: My mind wasgoing, If feel (a lump)both sides, normal. If feel iton side, thats worry about. So I tried, I felt otherside, . This said placerepeatedly time: I couldnt decide skin differentcolourId look think, It looks strange, Id look again, andit didnt .(., )This typology included isolated changes (even cancer-related e.g. lumps orunexplained bleeding) apart participant felt well. This meant theycontinued consider (Howell etal., ). In isolated example, participant wasreassured friends despite noticing significant bodily change (lump):I showed lump friends said, Youre freaking out,its nothing, cant lump. (P23) (Howell etal., )Studies suggested individuals falling typology needed extrainfluence active measures friends family members order seek help, asthey sense unwell.My wife worried appointment doctors.Because going away holiday, following week.  insisted thatI went down. Id waited longer going doctor hadntalready gone. I expecting couple days. I thought okay,see goes. I didnt feel effect see. It wasnt making ill oranything like that. The point going overseas. I think thats whatannoyed me, affected me. The wife little bit youre going youre notwell. (P037) (Howell, Smith Roman, )However, friends delay help-seeking offering reassurance normalisingsymptoms, reinforcing idea symptom exist: I lumps neck I, I didnt notice themIsaid friend saidOh nothing, everybody gets lumps. (., )Event-linked problemPatients plausibly related symptoms event accident ordifficult time lives. This particularly relevant pain, beexplained consequence injury (e.g. twisted ankle) (Gibsonetal., ). Two studiesidentified social/psychological causes symptoms, stress (Howelletal., , ).Another common explanation life changes stress: wed got mydaughter, son-in-law year old living very, hectichere, stressed . (., )Lack pain reassuring caused participants maintain attribution ordiminish likelihood alternative diagnosis (Howell etal., ) responded by, example, reducingphysical activity seeing help (Howell etal., ).Mild chronic illnessPatients and/or parents explained symptoms relating known mildillness non-serious condition viruses bad back. Around half bloodcancer patients assumed initial symptoms resolve own(Dapkeviit etal., ).One key challenges symptoms blood cancer multipleplausible explanations depending individuals circumstances (Molassiotisetal., ).For example, patient hoarseness voice blamed smoking thischange health; rib pains interpreted pulled muscles; cough andbreathlessness associated cold chest infection; fatigue wasattributed stress; night sweats linked menopause; itching anallergy, leading misinterpretations implications changedhealth. (., )This meant symptom normalised differently fit eachindividual, example, fever fatigue explained self-limiting illnessin children (Clarke etal., ) explained ageing process older adults (Howelletal., ).Patients particularly associated symptoms  initially  anyco-existing chronic conditions, example, change bowel habit attributed topre-existing irritable bowel syndrome Molassiotis etal.s study. Intermittent symptoms weresometimes misconstrued resolved, interrupt extend diagnosticinterval, example, cancellation investigations (Howelletal., ). Symptom typewas important, study multiple cancer types noted It thatpatients lump presenting symptom sought medical advice minimaldelay, patients symptoms delayed presentation healthservice (Molassiotis etal., ).Non-specific unwell stateA significant minority patients study attributed symptoms generalstate unwell. This particularly associated systemic symptoms asfatigue. Participants described feeling, example, Vaguely off Just didnt f",
-        "timestamp": "Thu May 04 19:49:09 +0000 2023"
+        "timestamp": "Thu May 04 22:33:33 +0000 2023"
     },
     {
         "annotations": [
@@ -3081,7 +2593,7 @@
             }
         ],
         "text": "eel right. (Howell etal., ); it, whammy, run down,deteriorated, worn, awful gone downhill. (Howell, Smith andRoman, ). The interpretation seemedmore serious, related cancer:You felt use anybody else, felt weak. andthen effects felt sickly time, actually beingsick, sickly. (Howell, Smith Roman, )Without specific explanation, participants described unsure do.Some participants sought help HCP, asking broad health checks mayhave diminished urgency consultation:Initial help seeking include requests broad health checks: I justfelt, okay Ill doctors and(say), Well, I want MOTI bittired (., )Having non-specific explanation symptoms meant individuals lackedappropriate language communicate fears HCPs.I knew wasnt right. I wasnt myself,and I couldnt explain doctor. (Howell, Smith andRoman, )Difficulty communicating HCPs experienced relatives felt needto communicate relative right reinforce urgency thepresentation (Howell etal., ).Participants multiple studies reported started interpretation ofsymptoms typology above, thinking changed time andeventually acknowledged required help HCP (Howelletal., ). We found thatthis precipitated particular symptoms signs provoked alarm. Thesesymptoms (particularly pain) stronger indicator individual moreserious illness. For example, participant Howell etal.  described alarm bells experiencedsevere pain physical activity:I couldnt anything. I mean Im fairly active (life),even Im retired, Ive exercise bike there, I onevery day 10 12 mile. When I started I couldnt mile Iknewalarm bells wrong . (Howell etal.,)Other participants described formal appraisal process led feeling ofalarm, tracking weight medication taking (Howelletal., ). Participantswere particularly alarmed rapid changes, suddenly severe ordisruptive (Molassiotis etal., ; Howell etal., ).Our synthesis showed delays diagnostic interval caused number offactors including low recognition blood cancer symptoms, misleading clinical tests,HCP reassurance patient subsequent slow reconsultation patient.HCP interpretation symptoms directly maps patient typology symptominterpretation outlined above. HCP recognition knowledge symptoms seemedparticularly problematic symptoms subtle gradual onset (Clarkeetal., ; Howelletal., ). Youngpeople reported study Gibson etal. reported delays alack seriousness concerns, slow decision-making HCP(Gibson etal., ). Forexample, studies reported patients experienced normalisation theirsymptoms doctor, told definitely cancer:Id pain long time, I actually said, I think Ive gotcancer (Dr) said me, You dont look like somebody whos got cancer; (GP) said, No, no, haventlymphoma, old people lymphoma.Youre (under 40)dont think . (.,)In studies, reported caused diagnostic delays fear ofconflict patient over-reassurance (Molassiotis etal., ). Some HCPs suggested alternative diagnoses(mild chronic illness) caused delays alternatives wereinvestigated reassured patient causes serious:I noticed, like, little pea-sized lump legmy right calfIthought Probably varicose veins. I didnt rush, I went doctor,regarding else, I happened mention hada feel it, says right, send ultrasound,you know, checked out. I asked (radiographer)Is varicose vein?She says yes. I got life, I carried on. I thought fairenough, know, varicose veinsI bothered I started gettingother lumps leg, I thought, it.(., )Some participants investigated conditions bloodcancer diagnosed, meant ill-prepared diagnosis:I completely shocked  theyd treating virusfor months. So kind shock. And uh Got little hazy afterthat. I felt numb I didnt know thatit progressed intoleukemia. (., )Howell etal.  alsofound HCPs proposed range explanations symptoms, including psychologicalconditions (stress, anxiety, depression):They thought anxiety, Id got state, Iwas tearful mess doctors, feeling ill theyre notgetting anywhereSo thought anxiety issue. It like turnedfrom thing .   said,Well whats probably happening body, know, mums gonein  home, body saying, Pffh, thats it, know, justrelax  youre sleeping much.(P31) (Howell etal., )In contrast, number studies described effective symptom knowledge HCPs andswift referrals specialist consultation (Gibson etal., ; Howell etal., ). This included explicit admission ofuncertainty effective use gut feeling reported GPs Clarkeetal. :This ones I opened door thought, I oughtto telephone, hospital line, yeah. I remember thatlurch stomach, know, think oh She wasnt bouncy, wasvery quiet, pain actually, moaning, lookedslightly swollen, face rounder been. (GPI). (., )In study, GPs shared view role diagnose cancer butto discriminate unwell healthy patients (children case) torefer quickly (Clarke etal., ).The synthesis findings revealed blood tests particularly importantrole diagnosis. It reported half patients urine serumtests, bone scans bone marrow biopsies (Frieseetal., ). Some bloodtests helpful others; Koshiaris etal. found 55%of patients multiple myeloma blood test year beforediagnosis; however, blood tests unhelpful detecting myeloma:plasma vis",
-        "timestamp": "Thu May 04 19:49:13 +0000 2023"
+        "timestamp": "Thu May 04 22:33:37 +0000 2023"
     },
     {
         "annotations": [
@@ -3662,7 +3174,7 @@
             }
         ],
         "text": "cosity erythrocyte sedimentation rate, C-reactiveprotein unhelpful. In addition, combination normal haemoglobin andplasma viscosity rule disease patients currently beingtested primary care (Koshiaris, Van den Bruel, etal., ). Howell etal.  found referral delayed bloodtests negative results lead diagnosis:I think Id lots blood tests well, try find out,you know, em showed lymphoma ;The blood test revealed nothing, it, camera thestomach . Where abnormal blood tests noted, rapid hospital referralwas described: Id different blood tests, wereall coming negative til blood tests come abnormal,all sudden, thats sent haematology ;(GP) immediately, said, Im sending hospital. Youreanaemic . (., )Many patients investigations conditions/diseases, example, vitaminB12 deficiency (LeBlanc etal., ) varicose veins (Howell etal., ).Three studies reported different effects seeing multiple HCPs. Two studiesreported helpful, example, seeing different HCP fromnormal precipitate referral long delay interpreted symptomsdifferently (Gibson etal., ). Similarly, Molassiotis etal.  reported HCPs expedited referral, citingdentists case symptoms head neck area. In contrast, studyreported lack continuity GP consultations identified acause delay patient (or parents) GPs (Clarkeetal., ).Howell etal.  werethe study report detailed information patients advocate oractively direct steps diagnostic phase (Howell etal., ). For example, patients reported multiplebehaviours reported patients convince HCPs need investigativeaction, request specific input directive theirrequests investigation:I werent going answer I knew wassomething . Doubt earlier explanation key: I wasconvinced wrong me, osteoporosis, Ithought I shouldnt feel, unwell, osteoporosis. .(., )One patient reported kept track weight loss diary order toconvince GP refer tests. Other patients HCPs opinions totry persuade GP research cancer.This rapid review illustrates complexity blood cancer symptoms, patientsappraise them, leading distinct help-seeking patterns primary care. The importance ofpatient appraisal help-seeking timely diagnosis established othercancers (Liu, n.d.; Oberoi etal., ; Omahony, ; Millsetal., ; Scottetal., ; van Osetal., ); review addsto body evidence specific qualities blood cancer symptoms, howthese create distinct patterns appraisal behaviour.We found studies measured diagnostic delay differently, beenmore homogeneity introduction MPT (Scott etal., ). We found range factors contribute todelay including disease factors, patient characteristics health system factors. Therewas lack consistency quantitative studies (in terms sampling, approach,definitions findings), making cross-study comparisons difficult. However, unifyinginterpretation overall reason delay lower cancer suspicion inparticular disease types (because symptoms likely interpreted asnon-significant) demographic (e.g. younger) groups.In narrative synthesis included studies, produced typology ofpatient interpretation symptoms found mirrored HCPs. The typologyincludes (1) wrong, (2) event-linked problem (e.g. injury), (3) mild orchronic illness (4) non-specific unwell feeling.The problem symptom normalisation mild illness attribution cancer diagnosis iswell established (Andersen Cacioppo, ; Smithet al., ; Kooetal., ), alongside theinfluence sudden changes/worsening symptoms referred rate changerule (Kummer etal., ). However, particular novelty review interpretation thatnothing wrong all, ambiguous nature blood cancer symptoms (e.g.pallor, swollen lymph nodes) patients sure symptom evenexists. The fourth typology non-specific unwell feeling unusual atarget interventions primary care. Similar findings found qualitative studyof head neck cancers, results highlighted subtlety symptoms (Scottetal., ).Another finding note fact blood cancer symptoms interpreteddifferently individuals according age co-morbidities, example, fatigue wasattributed stress younger people ageing effects older people. This similarto findings systematic review delays gynaecological cancer diagnosis, wherebleeding interpreted differentially women according age (Williams etal., ).In line studies primary care consultations, found diagnosis bedelayed HCP interpretation symptoms, misalignment HCP patientinterpretation (Amelung etal., ) direct denial cancer risk (van Os etal., ). Blood tests interpretation alsohighlighted risk delay, particularly wrong test chosen negativeresults reported.Finally, found relative paucity evidence burden onpatients overcome barriers blood cancer diagnostic pathway, recentqualitative study reporting (Howell etal., ). Most evidence date focused earlier thediagnostic pathway (e.g. symptom appraisal), little discussion conceptsrelevant people potential blood cancer symptoms navigated healthcare systemand influences this. For example, important understand perceived eligibility forhealthcare (candidacy) (Dixon-Woods etal., ; Tookey etal., ), particularly given vague nature symptoms, ability tounderstand cope symptoms fol",
-        "timestamp": "Thu May 04 19:49:19 +0000 2023"
+        "timestamp": "Thu May 04 22:33:42 +0000 2023"
     },
     {
         "annotations": [
@@ -3902,6 +3414,6 @@
             }
         ],
         "text": "lowing primary care consultations (Howie etal., ). This surprising,particularly given higher frequency multiple consultations primary care thisgroup complex, protracted pathways diagnosis. Interestingly, social networkscould detrimental impact prompt help-seeking blood cancer patients (e.g. bysupporting normalisation symptoms), despite previous research demonstrating layconversations considered important decision seek medical help newsymptoms (e.g. ., ).This review examine factors influencing patient health systemfactors diagnosis delay blood cancers. It conducted rigorouslyaccording rapid review protocol provides summary available evidence toinform future research complex interventions reduce diagnostic delay.There limitations. Despite systematic search strategy, studies havebeen missed limited database search entailed rapid design. The studieswere heterogeneous different methodologies, blood cancer types populations,making challenging synthesise findings; however, four-part typology aids theirinterpretation. Variations methodology  including definition delay  preventedaggregation meta-analysis. This methodological heterogeneity limits definitiveconclusions primary causes delay.HCPs increasing pressure primary care, particularly response theCOVID-19 pandemic, lack investment cancer workforce (Dacreetal., ). Blood cancersymptoms rarely presented hard interpret; expect HCPs retainthis knowledge constantly. Our typology suggests patients relating ourTypologies 2 3 initially present symptoms interpret mild illnessor event-linked problem. Solutions found systems reduce burden onHCPs patients support effective decision-making appropriate reconsultation,such electronic safety netting software risk calculation tools, asspecialist referral non-specific symptom pathways (Black etal., ). Blood tests investigations crucial toblood cancer diagnosis, access (as specialist advice) madeavailable. Additionally, Typologies 1 4 indicate patients seek helpat initially difficulty recognising disease state. Greater publicawareness blood cancer signs symptoms educational campaigns typesof public messaging improve this, supported accessible primary care services.Blood cancers difficult diagnose non-specific heterogeneous symptoms, andthis reflected symptoms interpreted patients, family andfriends, subsequently managed HCPs. It important understand differentinterpretations affect delays help-seeking, HCPs support timelyfollow-up patients presenting non-specific symptoms these. Researchrelating patient empowerment progressing investigations blood cancer symptomswould beneficial.",
-        "timestamp": "Thu May 04 19:49:22 +0000 2023"
+        "timestamp": "Thu May 04 22:33:45 +0000 2023"
     }
 ]
