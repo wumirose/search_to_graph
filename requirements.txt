@@ -1,18 +1,22 @@
+python==3.8.5
 beautifulsoup4==4.12.2
 bokeh==2.4.3
 matplotlib==3.7.1
-neo4j==5.7.0
 nltk==3.8.1
 numpy==1.24.2
 pandas==1.5.3
-pyvis==0.3.2
-Requests==2.30.0
+requests==2.28.2
 seaborn==0.12.2
-spacy==3.4.4
+spacy~=3.4.4
+#spacy_streamlit==1.0.5
 streamlit==1.21.0
-torch==2.0.0
 tqdm==4.65.0
-# protobuf>=4.21.3,<5.0dev
-# transformers==4.29.0.dev0
-visualise_spacy_tree==0.0.6
 wordcloud==1.8.2.2
+backports.zoneinfo;python_version=="3.9.6"
+protobuf==3.19.6
+
+transformers~=4.29.0.dev0
+neo4j~=5.7.0
+torch~=2.0.0
+networkx~=3.1
+pyvis~=0.3.2
