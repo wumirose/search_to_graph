@@ -474,7 +474,7 @@ def plot_node_type_relationship(network, search1, search2, title):
     """)
     subgraph.save_graph(title)
 
-import torch
+# import torch
 import spacy
 from spacy.matcher import Matcher
 from nltk.stem import WordNetLemmatizer
