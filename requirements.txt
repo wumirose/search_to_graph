@@ -15,3 +15,4 @@ torch==2.0.0
 tqdm==4.65.0
 visualise_spacy_tree==0.0.6
 wordcloud==1.8.2.2
+./model/en_ner_bionlp13cg_md-0.5.1.tar.gz
