@@ -31,7 +31,7 @@ from utilss import *
 import spacy
 from spacy.tokens import Token
 from spacy import displacy
-from transformers import AutoTokenizer
+# from transformers import AutoTokenizer
 from conf.change_config import addtional_config_chamge
 
 sys.path.insert(0,
