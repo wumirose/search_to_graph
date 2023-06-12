@@ -9,12 +9,11 @@ import numpy as np
 import seaborn as sns
 from tqdm import tqdm
 from bs4 import BeautifulSoup
-from itertools import combinations
+from itertools import combinations, islice
 import matplotlib.pyplot as plt
 import visualise_spacy_tree
 from copy import deepcopy
 from collections import defaultdict, Counter
-
 from entity_options import get_entity_options
 import nltk
 from nltk.tokenize import word_tokenize
@@ -24,6 +23,8 @@ import streamlit as st
 # from spacy.matcher import Matcher
 from bokeh.plotting import figure
 from bokeh.models import ColumnDataSource, HoverTool
+from pyvis.network import Network
+import streamlit as st
 
 nltk.download('punkt')
 nltk.download('stopwords')
@@ -31,7 +32,20 @@ from utilss import *
 import spacy
 from spacy.tokens import Token
 from spacy import displacy
-# from transformers import AutoTokenizer
+from spacy.matcher import Matcher
+from nltk.stem import WordNetLemmatizer
+from nltk.corpus import wordnet
+from neo4j_conn import Neo4jConn
+
+
+import time
+from config import Config
+
+lemmatizer = WordNetLemmatizer()
+EN = spacy.load('en_ner_bionlp13cg_md')
+NODENORM_URL = 'https://nodenormalization-sri.renci.org/get_normalized_nodes'
+NAME_RESOLUTION_URL = 'https://name-resolution-sri.renci.org/lookup'
+PLAIN_URL = 'http://bern2.korea.ac.kr/plain'
 from conf.change_config import addtional_config_chamge
 
 sys.path.insert(0,
@@ -79,13 +93,20 @@ def show_named_entities(paper, styl):
         st.markdown(ent_html, unsafe_allow_html=True)
 
 
+import random
+
 def randomize_list(input_list):
     """
     Returns a randomized version of the input list.
     """
     randomized_list = input_list.copy()
-    random.shuffle(randomized_list)
+    random.seed()  # Initialize the random number generator
+    n = len(randomized_list)
+    for i in range(n - 1, 0, -1):
+        j = random.randint(0, i)  # Generate a random index between 0 and i (inclusive)
+        randomized_list[i], randomized_list[j] = randomized_list[j], randomized_list[i]  # Swap elements
     return randomized_list
+
 
 
 @st.cache_data
@@ -144,9 +165,7 @@ def search_get_pmc(query, retmax):
                     body_fulltext = ' '.join(
                         [x.strip() for x in body_fulltext.split(' ') if
                          x not in [i['name'] for i in summary['authors']]])
-
                     body_fulltext = re.sub(r'\(\s*\)', '', body_fulltext)
-
                     results['PMC' + paperId].append({'paperId': 'PMC' + paperId, 'pubdate': summary['pubdate'],
                                                      'authors': [i['name'] for i in summary['authors']],
                                                      'title': summary['title'],
@@ -155,20 +174,15 @@ def search_get_pmc(query, retmax):
                                                      'No of words': len(body_fulltext.split())})
                     count += 1
                 except AttributeError:
-                    pass
+                    st.write('Papers Not available via:', query_full_text)
 
         ls = [list(rs[0].values()) for rs in results.values()]
         df = pd.DataFrame(ls, columns=['paperId', 'pubdate', 'authors', 'title', 'fulljournalname', 'fulltext',
                                        'No of words'])
         return wc, df, json.dumps(results, indent=4)
     else:
-        st.error(pubmed_json)
+        st.error(response.status_code)
 
-
-#
-# @st.cache
-# def generate_data(searchquery, retmax):
-#     return search_get_pmc(searchquery, retmax)
 
 # @st.cache
 def plot_stats(col):
@@ -266,41 +280,6 @@ def view_entity_df(parsed_entities):
     return dataset
 
 
-# def read_url(url):
-# '''Read URL CONTENTS'''
-# if url.endswith('pdf'):
-#     pdf = requests.get(url,  timeout = 30)
-#     doc = pdf2image.convert_from_bytes(pdf.content)
-
-#     # Get the article text
-#     article = []
-#     for i, data in enumerate(doc):
-#         txt = pytesseract.image_to_string(data).encode("utf-8")
-#         article.append(txt.decode("utf-8"))
-#     print('Total Pages:', i)
-#     article_txt = " ".join(article)
-# else:
-#     res = requests.get(url)
-#     doc = res.text
-#     soup = BeautifulSoup(doc, 'html5lib')
-#     for script in soup(["script", "style", 'aside']):
-#         script.extract()
-#     blog_txt = " ".join(re.split(r'[\n\t]+', soup.get_text()))
-#     article_txt = nlp(blog_txt)
-#     print('Entity lenghth:', len(article_txt.ents))
-# return article_txt
-
-
-def getcase(base_strg, new_strg):
-    if base_strg.islower():
-        new_strg = new_strg.lower()
-    elif base_strg.isupper():
-        new_strg = new_strg.upper()
-    elif base_strg.capitalize():
-        new_strg = new_strg.capitalize()
-    return new_strg
-
-
 def query_raw(text, url="http://bern2.korea.ac.kr/plain"):
     """BERN Biomedical entity linking API"""
     return requests.post(url, json={'text': text}, verify=False).json()
@@ -326,14 +305,8 @@ def make_df(parsed_entities):
     dataset = pd.DataFrame(d)
     return dataset
 
-import matplotlib.pyplot as plt
-from pyvis.network import Network
-import pandas as pd
-import streamlit as st
-
 # @st.cache_data
-def plotnetwork(data, physics=None):
-
+def plotnetwork(data, shownetwork = False, physics=None):
     # create a new pyvis network
     net = Network(height='750px', directed=True, width='100%', notebook=False)
 
@@ -361,7 +334,6 @@ def plotnetwork(data, physics=None):
 
         # add edges to the network
         for triple in triples:
-            # print(triple['subject'], list(net.nodes)[0])
             subject = [node['id'] for node in net.nodes if node.get('id') == triple['subject']]
             obj = [node['id'] for node in net.nodes if node.get('id') == triple['object']]
             #
@@ -418,7 +390,8 @@ def plotnetwork(data, physics=None):
     if physics:
         net.show_buttons(filter_=['physics'])
     # show the network
-    net.save_graph('my_network.html')
+    if shownetwork:
+        net.save_graph('my_network.html')
     return net
 
 
@@ -432,7 +405,6 @@ def plot_node_type_relationship(network, search1, search2, title):
     for node in network.nodes:
         if node[key] == search1 or node[key] == search2:
             subgraph.add_node(node['id'], label=node['label'], title=node['title'], color=node['color'])
-    # print(node)
     for edge in network.edges:
         source_node = subgraph.get_node(edge['from'])
         target_node = subgraph.get_node(edge['to'])
@@ -474,32 +446,6 @@ def plot_node_type_relationship(network, search1, search2, title):
     """)
     subgraph.save_graph(title)
 
-# import torch
-import spacy
-from spacy.matcher import Matcher
-from nltk.stem import WordNetLemmatizer
-from nltk.corpus import wordnet
-from neo4j_conn import Neo4jConn
-# from transformers import pipeline
-from itertools import islice
-import time
-from config import Config
-
-lemmatizer = WordNetLemmatizer()
-EN = spacy.load('en_ner_bionlp13cg_md')
-URI = "bolt://44.211.229.233:7687"
-USER = "neo4j"
-PWD = "polls-introduction-distance"
-neo4j_utils = Neo4jConn(uri=URI, user=USER, pwd=PWD)
-
-NODENORM_URL = 'https://nodenormalization-sri.renci.org/get_normalized_nodes'
-NAME_RESOLUTION_URL = 'https://name-resolution-sri.renci.org/lookup'
-PLAIN_URL = 'http://bern2.korea.ac.kr/plain'
-
-# device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-# # Load the zero-shot classification pipeline
-# zero_shot_classifier = pipeline("zero-shot-classification", device=device)
-
 
 def normalize(il):
     input = {'curies': il}
@@ -510,16 +456,16 @@ def normalize(il):
 def rearrange_dict(input_dict):
     output_dict = {}
     id_dict = input_dict[next(iter(input_dict))]
-    output_dict['entity_id'] = id_dict['id']['identifier']
-    output_dict['entity_label'] = id_dict['id'].get('label', '')
-    equivalent_identifiers = set(id.get('identifier', '') for id in id_dict['equivalent_identifiers'])
-    equivalent_labels = set(id.get('label', '') for id in id_dict['equivalent_identifiers'] if id.get('label', ''))
-    output_dict['equivalent_identifiers'] = [id_dict['id']['identifier']] + list(
-        equivalent_identifiers - {id_dict['id']['identifier']})
-    output_dict['equivalent_labels'] = list(equivalent_labels - {output_dict['entity_label']})
-    output_dict['entity_type'] = id_dict['type']
-    return output_dict
-
+    if id_dict:
+        output_dict['entity_id'] = id_dict['id']['identifier']
+        output_dict['entity_label'] = id_dict['id'].get('label', '')
+        equivalent_identifiers = set(id.get('identifier', '') for id in id_dict['equivalent_identifiers'])
+        equivalent_labels = set(id.get('label', '') for id in id_dict['equivalent_identifiers'] if id.get('label', ''))
+        output_dict['equivalent_identifiers'] = [id_dict['id']['identifier']] + list(
+            equivalent_identifiers - {id_dict['id']['identifier']})
+        output_dict['equivalent_labels'] = list(equivalent_labels - {output_dict['entity_label']})
+        output_dict['entity_type'] = id_dict['type']
+        return output_dict
 
 def resolve_name(query):
     res = requests.post(f"{NAME_RESOLUTION_URL}?string={query}&offset=0&limit=1000")
@@ -527,13 +473,13 @@ def resolve_name(query):
         response = res.json()
         if any(query.lower() in s.lower() for v in response.values() for s in v):
             keys = (k for k, v in response.items() if any(query.lower() == s.lower() for s in v))
-            keys = list(islice(keys, 10))  # limit the number of items returned to 10
+            keys = list(islice(keys, 5))  # limit the number of items returned to 5
             if keys:
-                return rearrange_dict(normalize(keys))
+                return keys
         else:
             return None
     else:
-        print(res.status_code)
+        st.exception(res.status_code)
         return None
 
 
@@ -567,16 +513,16 @@ def send_post_request(payload, timeout=30, retries=1):
                     responses.append(response.json())
                     break
                 else:
-                    print(f"Request failed with status code {response.status_code}. Retrying...")
+                    st.exception(f"Request failed with status code {response.status_code}. Retrying...")
             except requests.exceptions.Timeout:
                 if j == retries - 1:
-                    print("All retries failed. Request timed out.")
+                    st.exception("All retries failed. Request timed out.")
                     return None
                 else:
-                    print(f"Request timed out. Retrying in {2 ** j} seconds...")
+                    st.exception(f"Request timed out. Retrying in {2 ** j} seconds...")
                     time.sleep(2 ** j)
             except requests.exceptions.RequestException as e:
-                print(f"An error occurred: {e}")
+                st.exception(f"An error occurred: {e}")
                 return None
 
         if i < len(chunks) - 1:
@@ -591,66 +537,73 @@ def parse_post_request(payload):
     if isinstance(payload, list):
         responses = []
         for payld in payload:
-            responses.extend(send_post_request(payld, timeout=30, retries=1))
+            res = send_post_request(payld, timeout=30, retries=1)
+            if res:
+                responses.extend(res)
 
     resp = json.dumps(responses, indent=4)
     with open('responses.json', "w+") as f:
         f.write(resp)
-    print('send_post_request done!')
+    st.write('NER done! responses saved!')
+
     return parse_entities(responses)
+
+
+def id_exist(ids, id_mapping):
+    if ids in id_mapping:
+        return True
+    else:
+        return False
 
 
 def parse_entities(responses):
     id_name_mapping = {}
+    entity_mapping = {}
     parsed_entities = []
     for ix, entities in enumerate(responses):
         text = entities['text']
         e = []
         if not entities.get('annotations'):
-            # parsed_entities.append({'text': text, 'timestamp': entities['timestamp'],
-            #                         'text_sha256': hashlib.sha256(text.encode('utf-8')).hexdigest()})
             continue
         for entity in entities['annotations']:
-            entity_type = entity['obj']
+            # label
+            # entity_type = entity['obj']
+            # name
             entity_name = entity['mention']
+            # probability
             entity_proba = entity['prob']
-            try:
-                entid = entity['id']
-                if len(entid) < 1:
-                    entity_id = entity_name
-                elif len(entid) == 1:
-                    entity_id = entid[0]
-                else:
-                    entity_id = ''.join(entid)
-                id_name_mapping[entity_id] = entity_name
-            except IndexError:
-                entity_id = entity_name
-            if entity_name not in id_name_mapping.values():
-                # print(entity_name)
-                new_entity_name = id_name_mapping.get(entity_id)
-                text = text.replace(entity_name, new_entity_name)
-                # print('new text: ', text)
-                entity_name = new_entity_name
-            else:
-                entity_name = entity_name
 
-            temp = resolve_name(entity_name)
-            if temp:
-                if entity_id not in temp['equivalent_identifiers']:
-                    temp['equivalent_identifiers'].append(entity_id)
-                    temp['entity_type'].append(entity_type)
-                    temp.update({'entity_proba': entity_proba})
+            # id
+            if id_exist(entity['id'][0], id_name_mapping) and entity_mapping.get(entity['id'][0]):
+                # if id exist
+                e.append(entity_mapping.get(entity['id'][0]))
+            else:
+                if re.search(':', entity['id'][0]):
+                    # If a correct id exist in the result
+                    # save id mapping and name
+                    id_name_mapping[entity['id'][0]] = entity_name
+                    # Normalizes the ids eg Mesh:000 to biolink structure
+                    entit = rearrange_dict(normalize(entity['id']))
                 else:
-                    temp['equivalent_identifiers'].append(entity_id)
-                    temp['entity_type'].append(entity_type)
-                    temp.update({'entity_proba': entity_proba})
-                e.append(temp)
-        parsed_entities.append({'entities': e, 'text': text, 'triples': get_triples(e, text),
-                                'text_sha256': hashlib.sha256(text.encode('utf-8')).hexdigest()})
-        print(f'response: {ix} of {len(responses)} done')
+                    # eg  "CUI-less"; use its name to get its entid then normalize to biolink
+                    entid = resolve_name(entity_name)
+                    if entid:
+                        entit = rearrange_dict(normalize(entid))
+
+                if not (isinstance(entit, dict) and entit):
+                    continue
+                # maps old id to normalized id
+                entit.update({'entity_proba': entity_proba})
+                entity_mapping[entity['id'][0]] = entit
+                e.append(entit)
+        if e:
+            parsed_entities.append({'entities': e, 'text': text, 'triples': get_triples(e, text),
+                                    'text_sha256': hashlib.sha256(text.encode('utf-8')).hexdigest()})
+            st.success(f'chunck: {ix} of {len(responses)} done')
     qry = json.dumps(parsed_entities, indent=4)
     with open('parsed_entity.json', "w+") as f:
         f.write(qry)
+    st.info(f'Result saved in directory!')
     return parsed_entities
 
 
@@ -658,8 +611,7 @@ def get_parsed():
     payload = list(Config.DF.fulltext)
     parsed = parse_post_request(payload[:2])
     addtional_config_chamge(parsed)
-    # gg = open('parsed_entity1.json')
-    # parsed = json.load(gg)
+
 
 
 def get_p_relation(paper):
@@ -687,7 +639,7 @@ def get_p_relation(paper):
 
 
 def get_triples(entities, text):
-    id_list = [entity['entity_id'] for entity in entities]
+    id_list = [entity['entity_id'] for entity in entities if 'entity_id' in entity]
     label_list = [entity['entity_label'] for entity in entities]
 
     id_pairs = [[id_list[i], id_list[i + 1]] for i in range(len(id_list) - 1)]
@@ -695,8 +647,6 @@ def get_triples(entities, text):
 
     triples = []
     for k, item in enumerate(label_pairs):
-        # texts = sent_and_ents(item, textss)
-        # if texts:
         item1 = item[0]
         item2 = item[1]
         start_idx = text.find(item1)
@@ -705,25 +655,19 @@ def get_triples(entities, text):
             subsentence = text[start_idx:end_idx].strip()
             rels = get_p_relation(subsentence)
             if not rels:
-                triples.append({'subject': id_pairs[k][0], 'predicate': 'rel', 'object': id_pairs[k][1]})
+                triples.append({'subject': id_pairs[k][0], 'predicate': 'relations', 'object': id_pairs[k][1]})
             else:
-                candidate_rel = [
-                    lemmatizer.lemmatize(rel, pos=wordnet.VERB) if wordnet.synsets(rel, pos=wordnet.VERB) else 'rel' for
-                    rel in rels]
+                candidate_rel = [lemmatizer.lemmatize(rel, pos=wordnet.VERB) if wordnet.synsets(rel,
+                                                                                                pos=wordnet.VERB) else 'relation'
+                                 for rel in rels]
                 if len(candidate_rel) > 1:
                     for rel in candidate_rel:
                         triples.append({'subject': id_pairs[k][0], 'predicate': rel, 'object': id_pairs[k][1]})
-                    # print('rel>1,', item, candidate_rel)
-                    # sequence = [f"{text} {label}" for label in candidate_rel]
-                    # # Classify the sequence of candidate labels
-                    # results = zero_shot_classifier(sequence, candidate_rel)
-                    # # Extract the top relation label` `
-                    # predicted_label = results[0]
-                    # triples.append({'subject':id_pairs[k][0], 'predicate': predicted_label['labels'], 'object': id_pairs[k][1]})
                 else:
                     triples.append({'subject': id_pairs[k][0], 'predicate': candidate_rel[0], 'object': id_pairs[k][1]})
 
     return triples
+
 
 def get_node_labels():
     label_ls = []
