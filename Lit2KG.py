@@ -29,17 +29,19 @@ def main():
                                      step=5)
     if st.sidebar.button("Submit"):
         WC, DF, JSONDOC = search_get_pmc(searchquery, retmax)
-
-        change_config(searchquery, retmax, WC, DF, JSONDOC)
+        if JSONDOC:
+            change_config(searchquery, retmax, WC, DF, JSONDOC)
         # st.session_state.sidebar_state = 'collapsed' if st.session_state.sidebar_state == 'expanded' else 'expanded'
 
-        tab1, tab2 = st.tabs(["Preprocessing", "Knowledge Graph"])
-        with tab1:
-            from Preprocessing import run_process
-            run_process()
-        with tab2:
-            from KnowledgeGraph import main_kg
-            main_kg()
+            tab1, tab2 = st.tabs(["ExploratoryAnalysis", "Knowledge Graph"])
+            with tab1:
+                from Preprocessing import run_process
+                run_process()
+            with tab2:
+                from KnowledgeGraph import main_kg
+                main_kg()
+        else:
+            st.write('No search result!')
     else:
         st.sidebar.error('WARNING: refine the search term')
 
