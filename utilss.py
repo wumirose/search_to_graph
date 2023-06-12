@@ -109,7 +109,6 @@ def randomize_list(input_list):
 
 
 
-@st.cache_data
 def search_get_pmc(query, retmax):
     """
     # IMPORTANT: Cache the conversion to prevent computation on every rerun
