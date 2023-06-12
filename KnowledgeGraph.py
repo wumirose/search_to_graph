@@ -9,7 +9,7 @@ import streamlit.components.v1 as components
 
 def get_distinct_node(network, crit):
     labels = set()
-    if crit == 'Node Name':
+    if crit == 'NodeName':
         key = 'label'
     else:
         key = 'title'
@@ -65,7 +65,7 @@ def view_entity_plot():
 
 
 def main_kg():
-    tab1, tab2, tab3 = st.tabs(["Entities", "Triples Table", 'Visualize_graph'])
+    tab1, tab2, tab3 = st.tabs(["Entities", "Triples Table", 'Graph'])
     utilss.get_parsed()
     with tab1:
         view_entity_plot()
@@ -78,27 +78,26 @@ def main_kg():
             columns=['subject', 'predicate', 'object'])
         st.dataframe(df1)
     with tab3:
-        tab1, tab2 = st.tabs(['Visualize_Subgraph', "More-To-Do"])
+        tab1, tab2 = st.tabs(['Visualize_Subgraph', "Visualize_Graph"])
         with tab1:
             plotnetworkx()
         with tab2:
-            pass
-            # HtmlFile = open("my_network.html", 'r', encoding='utf-8')
-            # source_code = HtmlFile.read()
-            # components.html(source_code, height=1200, width=1000)
+            utilss.plotnetwork(Config.PARSED, shownetwork=True, physics=True)
+            HtmlFile = open("my_network.html", 'r', encoding='utf-8')
+            source_code = HtmlFile.read()
+            components.html(source_code, height=1200, width=1000)
             # # get_rel_types()
             # st.write(get_edge_types_for_node(network, node_id=None))
 
 
 def plotnetworkx():
     network = utilss.plotnetwork(Config.PARSED, physics=True)
-    controler = st.container()
-    search = controler.selectbox('search by:', ('NodeName', 'NodeType'))
+    search = st.selectbox('search by:', ('NodeName', 'NodeType'))
     if search:
         lists = get_distinct_node(network, search)
-        selected = controler.multiselect('Select subject/Object to visualize', lists)
+        selected = st.multiselect('Select subject/Object to visualize', lists)
         if len(selected) == 0:
-            st.text('Choose at search item to start')
+            st.warning('Choose at least 2 search item to start')
         elif len(selected) == 2:
             search1, search2 = selected
             title = f'{search1} - {search1} Relationship'
