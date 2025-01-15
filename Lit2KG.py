@@ -14,21 +14,26 @@ def main():
     st.header('Build Knowledge Graph 🔯 from Literature Articles 📚')
 
     # Sidebar for search query and retmax
-    st.sidebar.header(f'Literatures-based KGs Generators\nDatabase: {DB}')
+    st.sidebar.header(f'Literatures-based KGs Generators\nDatabase')
     st.sidebar.markdown("""____""")
+    searchdb = st.sidebar.selectbox(["PubMed", "Arxiv"], ["PubMed", "Arxiv"], placeholder='PubMed')
+
     searchquery = st.sidebar.text_input('Enter Your search query', placeholder='eg. COVID-19')
     if searchquery == "":
         st.sidebar.error('No search term added, enter a search term')
     else:
         st.sidebar.markdown(
             f"""
-                    You are searching for: {searchquery}
+                    You are searching for: {searchquery} fom {searchdb}
                     """
         )
     retmax = st.sidebar.number_input('The maximum docs to be retrieved?', min_value=0, max_value=100, value=0,
                                      step=5)
     if st.sidebar.button("Submit"):
-        WC, DF, JSONDOC = search_get_pmc(searchquery, retmax)
+        if searchdb == "PubMed":
+            WC, DF, JSONDOC = search_get_pmc(searchquery, retmax)
+        else:
+            WC, DF, JSONDOC = search_get_arxiv(searchquery, retmax)
         if JSONDOC:
             change_config(searchquery, retmax, WC, DF, JSONDOC)
         # st.session_state.sidebar_state = 'collapsed' if st.session_state.sidebar_state == 'expanded' else 'expanded'

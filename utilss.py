@@ -3,6 +3,8 @@ import re
 import random
 import json
 import requests
+import xml.etree.ElementTree as ET
+import html
 import pandas as pd
 import hashlib
 import numpy as np
@@ -12,22 +14,25 @@ from bs4 import BeautifulSoup
 from itertools import combinations, islice
 import matplotlib.pyplot as plt
 import visualise_spacy_tree
-from copy import deepcopy
+import urllib.parse
+import feedparser
+# from copy import deepcopy
 from collections import defaultdict, Counter
 from entity_options import get_entity_options
 import nltk
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk.util import ngrams
-import streamlit as st
+# import streamlit as st
 # from spacy.matcher import Matcher
 from bokeh.plotting import figure
 from bokeh.models import ColumnDataSource, HoverTool
 from pyvis.network import Network
 import streamlit as st
-
-nltk.download('punkt')
+# nltk.download()
+nltk.download('punkt_tab')
 nltk.download('stopwords')
+
 from utilss import *
 import spacy
 from spacy.tokens import Token
@@ -107,7 +112,20 @@ def randomize_list(input_list):
         randomized_list[i], randomized_list[j] = randomized_list[j], randomized_list[i]  # Swap elements
     return randomized_list
 
+def extract_text(input_string):
+    def extract_clean_text( element ):
+        text = ''.join(element.itertext())
+        text = re.sub(r'<.*?>', '', text)
+        text = html.unescape(text)
+        return text
 
+    root = ET.fromstring(input_string)
+    kwds = []
+    for kwd in root.findall('.//kwd'):
+        clean_text = extract_clean_text(kwd)
+        if clean_text:
+            kwds.append(clean_text)
+    return kwds
 
 def search_get_pmc(query, retmax):
     """
@@ -123,7 +141,7 @@ def search_get_pmc(query, retmax):
     results = defaultdict(list)
     count = 0
     wc = []
-    rets = retmax + 10
+    rets = retmax + 15
     retmode = 'json'
     search_url = 'https://www.ncbi.nlm.nih.gov/'
     domain = search_url + 'entrez/eutils'
@@ -148,9 +166,131 @@ def search_get_pmc(query, retmax):
                     for tg in tags:
                         for t in meta(tg):
                             t.decompose()
-                    kwd = ', '.join(kw.text for kw in meta('kwd-group') if kw)
-                    wc.extend(list(filter(None, kwd.strip().split('\n'))))
+                    # Extract the keywords
+                    xml_list = meta('kwd-group')
+                    if xml_list:
+                        xml_string = str(xml_list[0])
+                        wc.extend(extract_text(xml_string))
 
+                    abstract = meta.abstract.getText().encode().decode('ascii', 'ignore')
+                    print(abstract)
+                    body = meta.body
+                    body_fulltexts = body.getText().encode().decode('ascii', 'ignore')
+                    body_fulltext = re.sub(r"\b(?!(?:Although|Also)\b)(?:[A-Z][A-Za-z'`-]+)(?:,? (?:(?:and |& )?" +
+                                           "(?:[A-Z][A-Za-z'`-]+)|(?:et al.?)))*(?:, *(?:19|20)[0-9][0-9]" +
+                                           "(?:, p\.? [0-9]+)?| *\((?:19|20)[0-9][0-9](?:, p\.? [0-9]+)?\))", '',
+                                           body_fulltexts)
+                    body_fulltext = re.sub(r"(\[[^][]*]|\d+( $))", '', body_fulltext)
+                    body_fulltext = re.sub(r"[A-Z]\w*(?: et al)", '', body_fulltext)
+                    body_fulltext = re.sub(r"^[\d\-.]+", '', body_fulltext, flags=re.MULTILINE)
+                    body_fulltext = ' '.join([x for x in body_fulltext.split(' ') if x not in stop_words])
+                    body_fulltext = ' '.join(
+                        [x.strip() for x in body_fulltext.split(' ') if
+                         x not in [i['name'] for i in summary['authors']]])
+                    body_fulltext = re.sub(r'\(\s*\)', '', body_fulltext)
+                    results['PMC' + paperId].append({'paperId': 'PMC' + paperId, 'pubdate': summary['pubdate'],
+                                                     'authors': [i['name'] for i in summary['authors']],
+                                                     'title': summary['title'],
+                                                     'fulljournalname': summary['fulljournalname'],
+                                                     'fulltext': ''.join([k.strip('\n') for k in body_fulltext]),
+                                                     'No of words': len(body_fulltext.split())})
+                    count += 1
+                except AttributeError:
+                    st.write('Papers Not available via:', query_full_text)
+
+        ls = [list(rs[0].values()) for rs in results.values()]
+        df = pd.DataFrame(ls, columns=['paperId', 'pubdate', 'authors', 'title', 'fulljournalname', 'fulltext',
+                                       'No of words'])
+        return wc, df, json.dumps(results, indent=4)
+    else:
+        st.error(response.status_code)
+
+
+def search_get_arxiv(query, retmax):
+    """
+    # IMPORTANT: Cache the conversion to prevent computation on every rerun
+    param query: the search keyword eg 'covid genes'
+    param retmax: the maximum response required, though 70% is returned
+    param path: location to save the PMCIDs
+    param summary_mode: 'dataframe' or 'dict'
+    return: Dataframe or dictionary structure of the search results
+
+    """
+    def fetch_arxiv_papers( query, retmax ):
+        base_url = "http://export.arxiv.org/api/query"
+        encoded_query = urllib.parse.quote(query)  # Encode the query
+        search_url = f"{base_url}?search_query=all:{encoded_query}&start=0&max_results={retmax}"
+        print(f"Query URL: {search_url}")  # Debugging
+        feed = feedparser.parse(search_url)
+
+        papers = []
+        for entry in feed.entries:
+            paperId = entry.link.split('/')[-1]
+            results[paperId].append({'paperId': paperId, 'pubdate': entry.published,
+                                             'authors': [author.name for author in entry.authors],
+                                             'title': entry.title,
+                                             'url': entry.link,
+                                             'abstract': ''.join([k.strip('\n') for k in body_fulltext]),
+                                             'No of words': len(body_fulltext.split())})
+            count += 1
+            paper = {
+                "title": entry.title,
+                "abstract": entry.summary,
+                "authors": [author.name for author in entry.authors],
+                "url": entry.link,
+                "published": entry.published,
+            }
+            papers.append(paper)
+
+        return papers
+
+    # Fetch abstracts for "knowledge graphs"
+    papers = fetch_arxiv_papers(query, retmax)
+    for paper in papers:
+        print(f"Title: {paper['title']}")
+        print(f"Abstract: {paper['abstract']}")
+        print(f"Authors: {', '.join(paper['authors'])}")
+        print(f"URL: {paper['url']}")
+        print(f"Published: {paper['published']}")
+        print("-" * 80)
+
+    db = 'pmc'
+    results = defaultdict(list)
+    count = 0
+    wc = []
+    rets = retmax + 15
+    retmode = 'json'
+    search_url = 'https://www.ncbi.nlm.nih.gov/'
+    domain = search_url + 'entrez/eutils'
+    query_link_search = f'{domain}/esearch.fcgi?db={db}&retmax={rets}&retmode={retmode}&term={query}'
+    response = requests.get(query_link_search)
+    pubmed_json = response.json()
+
+    tags = ['xref', 'title', 'table', 'fig', 'back']
+    if pubmed_json['esearchresult'].get('idlist'):
+        # Downloading Document Summaries
+        randomized_pid_list = randomize_list(pubmed_json["esearchresult"]["idlist"])
+        for paperId in randomized_pid_list:
+            query_link_summary = f'{domain}/esummary.fcgi?db={db}&id={paperId}&retmode={retmode}'
+            if count < retmax:
+                summary = requests.get(query_link_summary).json()['result'][paperId]
+                fulltext_url = search_url + 'pmc/oai/oai.cgi'
+                query_full_text = f'{fulltext_url}?verb=GetRecord&identifier=oai:pubmedcentral.nih.gov:{paperId}&metadataPrefix={db}'
+                fulltext = requests.get(query_full_text)
+                soup = BeautifulSoup(fulltext.text, features='xml')
+                try:
+                    meta = soup.GetRecord.record.metadata
+                    for tg in tags:
+                        for t in meta(tg):
+                            t.decompose()
+                    # Extract the keywords
+                    xml_list = meta('kwd-group')
+                    if xml_list:
+                        xml_string = str(xml_list[0])
+                        wc.extend(extract_text(xml_string))
+
+                    abstract = meta.abstract.getText().encode().decode('ascii', 'ignore')
+                    print(abstract)
                     body = meta.body
                     body_fulltexts = body.getText().encode().decode('ascii', 'ignore')
                     body_fulltext = re.sub(r"\b(?!(?:Although|Also)\b)(?:[A-Z][A-Za-z'`-]+)(?:,? (?:(?:and |& )?" +
@@ -185,7 +325,8 @@ def search_get_pmc(query, retmax):
 
 # @st.cache
 def plot_stats(col):
-    st.set_option('deprecation.showPyplotGlobalUse', False)
+    # st.set_option('deprecation.showPyplotGlobalUse', False)
+
     fig, ax = plt.subplots()
     sns.set(rc={'figure.figsize': (20, 12)})
     sns.set_style("whitegrid")
@@ -470,7 +611,8 @@ def resolve_name(query):
     res = requests.post(f"{NAME_RESOLUTION_URL}?string={query}&offset=0&limit=1000")
     if res.status_code == 200:
         response = res.json()
-        if any(query.lower() in s.lower() for v in response.values() for s in v):
+        print('response: ', response)
+        if any(query.lower() in s.lower() for v in response for s in v):
             keys = (k for k, v in response.items() if any(query.lower() == s.lower() for s in v))
             keys = list(islice(keys, 5))  # limit the number of items returned to 5
             if keys:
@@ -668,10 +810,10 @@ def get_triples(entities, text):
     return triples
 
 
-def get_node_labels():
-    label_ls = []
-    label_type_query = """CALL db.labels()"""
-    result = neo4j_utils.query(label_type_query)
-    for el in result:
-        label_ls.append(el[0])
-    return label_ls
+# def get_node_labels():
+#     label_ls = []
+#     label_type_query = """CALL db.labels()"""
+#     result = neo4j_utils.query(label_type_query)
+#     for el in result:
+#         label_ls.append(el[0])
+#     return label_ls

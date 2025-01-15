@@ -13,9 +13,10 @@ st.session_state.title = None
 
 
 def run_process():
-    if WC and len(DF) > 1:
+    if WC or len(DF) > 1:
         word_could_dict = Counter(WC)
         wcd = WordCloud().fit_words(dict(word_could_dict))
+
         journals = DF.fulljournalname.value_counts()
 
         # tab1, tab2, tab3 = st.tabs(["Keywords WordCloud", "Frequent N-gram CountsPlot", "Journal Statistics"])
@@ -23,7 +24,10 @@ def run_process():
 
         with col1:
             col1.subheader("Keywords WordCloud")
-            st.image(wcd.to_array(), caption='Keywords WordCloud')
+            if WC:
+                st.image(wcd.to_array(), caption='Keywords WordCloud')
+            else:
+                st.info("The database stores no keyword")
 
         with col2:
             col2.subheader(f"Frequent Bi-gram words")
